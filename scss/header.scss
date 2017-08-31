@@ -2,6 +2,7 @@
 
 
 header {
+    position: relative;
 
 
     nav {
@@ -11,51 +12,43 @@ header {
         height: $nav_height;
         font-family: $header_font_stack;
         text-transform: uppercase;
-        overflow: hidden;
+
+
 
         ul {
             padding: 0;
             margin: 0;
 
-            &.float-left {
-                float: left;
-            }
-            &.float-right {
-                float: right;
-            }
+
 
             li {
                 padding:0;
                 margin: 0;
-
-                display: inline-block;
+                display: block;
 
 
 
                 a {
-                    display: inline-block;
-                    padding: 20px 20px 0;
-                    line-height: $nav_height;
+                    display: block;
+                    padding: 20px;
+                    border: 0;
+                    border-radius: 0;
 
-
-                    &:link,     &:visited,     &:active {
-                        color: $brand_color;
+                    &:link, &:visited, &:active, &:hover {
+                        color: white;
+                        border:0;
                     }
                     &:hover {
-                        color: white;
                         background-color: $brand_color;
-                        transform: translateY(-10px);
                     }
 
 
-                    &.logo {
+                    &.branding {
                         text-indent: -9999px;
-                        background: url('../images/logo.svg') no-repeat left center;
+                        background: url('../img/logo.svg') no-repeat left center;
                         background-size: 190px;
                         width: 190px;
                         height: $nav_height;
-
-
 
                         &:hover {
                             background-color: transparent;
@@ -67,6 +60,92 @@ header {
         }
     }
 
+
+}
+
+
+
+#navigation_menu {
+
+    display: none;
+    position: fixed;
+    background: transparentize($brand_color,0.1);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    padding-top: 20px;
+
+    &.menu_visible {
+        display: block;
+    }
+
+}
+
+
+#menu_button {
+    display: inline-block;
+    background: url('../img/menu.svg') no-repeat center center;
+    background-size: 30px;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    text-indent: -9999px;
+    z-index: 301;
+    top: 10px;
+    right: 10px;
+    margin: 0;
+    border:0;
+
+}
+
+@media (min-width: 768px){
+
+
+    #menu_button {
+        display: none;
+    }
+
+
+    #navigation_menu {
+        text-align: right;
+        position: static;
+        background: none;
+        display: block;
+        padding: 0;
+
+        a {
+            padding:0 20px;
+
+            &:link,     &:visited,     &:active {
+                color: $brand_color;
+            }
+            &:hover {
+                color: white;
+                background-color: $brand_color;
+                border: 0;
+                // transform: translateY(-10px);
+            }
+        }
+
+
+
+    }
+
+    header {
+        nav {
+            ul {
+                li {
+                    display: inline-block;
+                    a {
+                        display: inline-block;
+                        line-height: $nav_height;
+                    }
+                }
+            }
+        }
+    }
 
 
 

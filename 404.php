@@ -2,7 +2,7 @@
 
 
 		<!-- section -->
-		<section>
+		<section class="container">
 
 			<!-- article -->
 			<article id="post-404">
@@ -17,8 +17,5 @@
 
 		</section>
 		<!-- /section -->
-
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

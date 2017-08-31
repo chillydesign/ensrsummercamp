@@ -10,15 +10,18 @@
 
 
 body {
-	background: $background-color;
-	color: $font-color;
-	font-family: $font-stack;
+	background: $background_color;
+	color: $font_color;
+	font-family: $font_stack;
 	font-size: 62.5%;
 	font-weight: normal;
 }
 
 
 /*TYPOGRAPHY*/
+h1,h2,h3,h4,h5 {
+    font-family: $header_font_stack;
+}
 
 h1 {font-size: 3.9em; padding:50px 0 50px;font-weight: normal;}
 h2 {font-size: 2.9em; padding: 0 0 20px;font-weight: bold}
@@ -50,19 +53,17 @@ ul ul , ul ol, ol ol {font-size: inherit}
 
 a {
 	text-decoration: none;
-	border-bottom: 1px dotted $primary-color;
+	border-bottom: 1px dotted $brand_color;
 	display: inline-block;
-	font-style: italic;
 	border-radius:3px;
 	@include transition(0.3s);
 
-
 	&:link, &:visited, &:active {
-		color: $primary-color
+		color: $brand_color
 	}
 	&:hover {
-		border-bottom: 1px solid $primary-color;
-		background-color: transparentize($primary-color,0.8)
+		border-bottom: 1px solid $brand_color;
+		background-color: transparentize($brand_color,0.8)
 	}
 }
 

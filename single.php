@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-	
+
 	<!-- section -->
-	<section>
+	<section class="container">
 
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
@@ -39,7 +39,7 @@
 
 			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 
-			<?php comments_template(); ?>
+			<?php // comments_template(); ?>
 
 		</article>
 		<!-- /article -->
@@ -60,8 +60,6 @@
 
 	</section>
 	<!-- /section -->
-	
 
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

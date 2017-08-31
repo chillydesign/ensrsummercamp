@@ -1,16 +1,90 @@
 
-
-/*FOOTER*/
 footer {
-	background:#222;
-	color: #ddd;
-	padding:20px 0;
-	margin:20px 0 0;
+    background-color: $brand_color;
+    border-top:8px  solid lighten($brand_color, 10);
+    color: lighten($brand_color, 55);
+    margin-top:30px;
+    padding:40px 0 20px;
+
+
+    p {
+        padding: 0;
+        margin: 0 0 30px;
+        font-size: 1.5em;
+        position:relative;
+    }
+
+    a {
+        &:link, &:visited, &:active {
+            color: white;
+        }
+        &:hover {
+            text-shadow: 0 0 5px white;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        max-width: 200px;
+    }
+    #ensr_summer_col {
+        img {
+            width:50%;
+            margin-top:50px;
+            max-width:50%;
+        }
+    }
+
+
 }
 
-footer p {
-	padding:0
+
+@media (min-width: 768px) {
+
+    footer {
+
+        #ensr_col {
+            img {
+                height:70px;margin-top:39px;
+                max-width: none;width: auto;
+
+            }
+
+        }
+        #summercamp_col {
+            img {
+                height:110px;
+                max-width: none;width:auto;
+
+            }
+
+        }
+
+        #ensr_summer_col {
+            img {
+                width:90%;
+                max-width: none;
+            }
+        }
+
+
+    }
 }
-footer a {
-	color: white;
+
+@media (min-width: 992px) {
+    footer {
+        #ensr_col {
+            p {
+                left:70px
+            }
+        }
+        #ensr_summer_col {
+            img {
+                width:90%;
+                margin-top: 0;
+            }
+        }
+
+    }
 }

@@ -2,7 +2,7 @@
 
 
 		<!-- section -->
-		<section>
+		<section class="container">
 
 			<h1><?php _e( 'Latest Posts', 'webfactor' ); ?></h1>
 
@@ -14,6 +14,6 @@
 		<!-- /section -->
 
 
-<?php get_sidebar(); ?>
+
 
 <?php get_footer(); ?>
