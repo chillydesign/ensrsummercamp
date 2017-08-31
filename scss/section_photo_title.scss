@@ -1,0 +1,50 @@
+
+
+.section_photo_title {
+
+    position: relative;
+    color: white;
+    text-shadow: 0 0 2px transparentize($font_color, 0.5);
+    text-align: center;
+
+
+    h2 {
+        padding: 150px 0;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 0 white, 2px 2px 0 $brand_color, 3px 3px 0 $brand_color, 4px 4px 0 white;
+
+    }
+
+    p {
+        max-width: 500px;
+        display: inline-block;
+    }
+
+
+
+    .background {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top:0;
+        z-index: -2;
+
+    }
+
+
+
+
+}
+@media (min-width: 768px) {
+    .photo_section {
+        h2 {
+            padding: 300px 0;
+        }
+    }
+
+}
+// END OF PHOTO SECTION

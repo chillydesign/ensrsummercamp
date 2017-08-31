@@ -3,21 +3,13 @@
 
 
 <div id="map_outer">
-<div id="map_container" >
-
-
-</div>
-
-<div id="location_box">
-	<h3 id="location_name" style="display:none">Taurus Studio</h3>
-</div>
-
+    <div id="map_container" >
+    </div>
 </div>
 
 
-
+<script type='text/javascript' src='//maps.google.com/maps/api/js?key=AIzaSyC-BDJZU14ltCrYRPei33a4ZSQfJqRbxNY&#038;ver=4.8.1'></script>
 <script type="text/javascript">
-	var map_title = 'Rue du Midi 15 Case postale 411 1020 Renens';
-	var latt = 46.5380683;
-	var lonn = 6.5812023;
+var map_title = 'Champery';
+var map_location = {lat: 46.1813333, lng:6.8742121};
 </script>

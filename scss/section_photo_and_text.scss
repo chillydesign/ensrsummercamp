@@ -1,0 +1,36 @@
+.blob_text {
+        margin: 0 0 30px;
+    }
+
+    .image_blob {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 30px;
+        height: 300px;
+
+
+
+        .image_blob_inner {
+            height: 100%;
+            width: 100%;
+            background: url('../img/image_blob1.svg') no-repeat center center;
+            background-size: 100%;
+        }
+
+
+        &.image_blob_small {
+        }
+
+        &.image_blob_large {
+            height: 450px;
+
+            .image_blob_inner {
+                    background-image: url('../img/image_blob2.svg');
+            }
+
+        }
+
+
+
+    }

@@ -69,7 +69,7 @@ header {
 
     display: none;
     position: fixed;
-    background: transparentize($brand_color,0.1);
+    background: transparentize($brand_color,0.08);
     top: 0;
     left: 0;
     right: 0;
@@ -79,6 +79,7 @@ header {
 
     &.menu_visible {
         display: block;
+        z-index: 100;
     }
 
 }
@@ -90,7 +91,7 @@ header {
     background-size: 30px;
     height: 30px;
     width: 30px;
-    position: absolute;
+    position: fixed;
     text-indent: -9999px;
     z-index: 301;
     top: 10px;
@@ -147,6 +148,9 @@ header {
         }
     }
 
+}
 
 
+.blurred_body {
+    filter: blur(3px);
 }

@@ -1,0 +1,48 @@
+.section_welcome_paragraph {
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $brand_color;
+    position: relative;
+    margin:0 0 20px;
+
+
+
+        h1 {
+            font-family: $cursive_font_family;
+            text-align: center;
+            color: white;
+            padding: 0;
+            margin: 0;
+            text-shadow: 0 0 10px transparentize($font_color, 0.5), 0 10px 10px transparentize($font_color, 0.5);
+        }
+
+        .sheep {
+            background: url('../img/sheep3.svg') bottom right no-repeat;
+            background-size: 100%;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            bottom: -1px;
+            right:0;
+        }
+
+}
+
+body.home .section_welcome_paragraph {
+    padding: 150px 0 250px;
+}
+
+
+@media (min-width: 768px) {
+    .section_welcome_paragraph {
+        padding:70px 0;
+    }
+
+    body.home .section_welcome_paragraph {
+        padding: 200px 0 300px;
+    }
+
+}
+// END OF WELCOME PARAGRAPH
