@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/chillydesign/blanktheme#readme",
   "dependencies": {
+    "bxslider": "^4.2.13",
     "jquery": "^3.2.1"
   },
   "devDependencies": {

@@ -1,0 +1,32 @@
+
+.section_slider {
+    position: relative;
+
+    .squiggle {
+        z-index: 3;
+    }
+
+    .bx-wrapper {
+        box-shadow: 0 0 0;
+        border: 0;
+        background: none;
+    }
+    .bxslider {
+
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top:0;
+        z-index: -2;
+
+        .slide_div {
+            width: 100%;
+            padding:25%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+
+        }
+    }
+}

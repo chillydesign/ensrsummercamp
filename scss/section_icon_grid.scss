@@ -1,0 +1,40 @@
+
+
+// SWISS_ICONS
+.section_icon_grid {
+
+    text-align: center;
+    color: $brand_color;
+
+    h3 {
+        text-transform: uppercase;
+        padding: 0;
+        margin: 0;
+
+    }
+
+    p {
+        font-family: $header_font_stack;
+        font-size: 1.4em;
+    }
+
+    img {
+        width: 100%;
+        margin-bottom: 30px;
+        transition: all $transition_time;
+
+    }
+
+    .swiss_icon_container:hover {
+        img {
+            transform: scale(1.18);
+        }
+
+    }
+
+
+
+
+
+}
+// END OF SWISS_ICONS

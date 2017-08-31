@@ -1,0 +1,32 @@
+
+
+#beautiful_swiss {
+    display: block;
+    width: 50%;
+    margin: 0 10%;
+}
+#swiss_map {
+    display: block;
+    width: 80%;
+    margin: 0 10%;
+}
+@media (min-width: 768px) {
+
+
+    #beautiful_swiss {
+        float:left;
+        width:35%;
+        margin: 0;
+        position: relative;
+        top:200px;
+    }
+    #swiss_map {
+        float:left;
+        width:65%;
+        margin: 0;
+
+    }
+
+
+
+}

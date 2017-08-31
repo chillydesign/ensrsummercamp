@@ -18,7 +18,6 @@
 
 			<div class="container">
 				<?php the_content(); ?>
-				<?php // comments_template( '', true ); // Remove if you don't want comments ?>
 				<?php edit_post_link(); ?>
 			</div>
 
