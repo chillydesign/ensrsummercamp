@@ -41,12 +41,10 @@
                         </div>
 
                     </div>
-                    <!-- <a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a> -->
                     <a href="#" id="menu_button" >Menu</a>
                 </div>
 
             </nav>
         </header>
 
-        <!-- <main id="main"  class="cd-content"> -->
         <main id="main" >
