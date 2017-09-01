@@ -35,9 +35,18 @@ if ( $image_position == 'right' ) {
 
         </div>
         <div class="<?php echo $classes[1]; ?>">
-            <div class="image_blob image_blob_<?php echo $size; ?> "  style="background-image:url('<?php echo $image['url']; ?>');">
-                <?php if ($bubble_image == 'yes') : ?><div  class="image_blob_inner"></div> <?php endif; ?>
-            </div>
+
+                <?php if ($bubble_image == 'yes') { ?>
+                    <div class="image_blob image_blob_<?php echo $size; ?> "  style="background-image:url('<?php echo $image['url']; ?>');">
+                        <div  class="image_blob_inner"></div>
+                    </div>
+                <?php } else  { ?>
+                    <img src="<?php echo $image['url']; ?>" alt="" />
+                <?php }; ?>
+
+
+
+
         </div>
 
     </div> <!-- END OF ROW -->
