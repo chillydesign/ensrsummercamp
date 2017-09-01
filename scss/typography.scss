@@ -60,8 +60,8 @@ a {
 		background-color: transparentize($brand_color,0.9)
 	}
     &:active {
-        position: relative;
-        top:1px;
+        // position: relative;
+        // top:1px;
     }
 }
 

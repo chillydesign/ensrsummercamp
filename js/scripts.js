@@ -12,6 +12,64 @@ import Velocity from '../node_modules/velocity-animate/velocity.js';
         'use strict';
 
 
+        // var overlayNav = $('.cd-overlay-nav'),
+        // 	overlayContent = $('.cd-overlay-content'),
+        // 	toggleNav = $('.cd-nav-trigger'),
+        // 	navigation = $('.cd-primary-nav');
+        //
+        // toggleNav.on('click', function(){
+        // 	if(!toggleNav.hasClass('close-nav')) {
+        // 		//it means navigation is not visible yet - open it and animate navigation layer
+        //         //animate menu icon into a cross icon
+        //     		toggleNav.addClass('close-nav');
+        //     		//animate the navigation layer
+        //     		overlayNav.children('span').velocity({
+        //     			translateZ: 0,
+        //     			scaleX: 1,
+        //     			scaleY: 1,
+        //     		}, 500, 'easeInCubic', function(){
+        //     			//show navigation
+        //     			navigation.addClass('fade-in');
+        //     		});
+        //
+        // 	} else {
+        //
+        //         console.log(toggleNav);
+        // 		//animate cross icon into a menu icon
+        // 		toggleNav.removeClass('close-nav');
+        // 		//animate the content layer
+        // 		overlayContent.children('span').velocity({
+        // 			translateZ: 0,
+        // 			scaleX: 1,
+        // 			scaleY: 1,
+        // 		}, 500, 'easeInCubic', function(){
+        // 			//hide navigation
+        // 			navigation.removeClass('fade-in');
+        // 			//scale to zero the navigation layer
+        // 			overlayNav.children('span').velocity({
+        // 				translateZ: 0,
+        // 				scaleX: 0,
+        // 				scaleY: 0,
+        // 			}, 0);
+        // 			//reduce to opacity of the content layer with the is-hidden class
+        // 			overlayContent.addClass('is-hidden').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+        // 				//wait for the end of the transition and scale to zero the content layer
+        // 				overlayContent.children('span').velocity({
+        // 					translateZ: 0,
+        // 					scaleX: 0,
+        // 					scaleY: 0,
+        // 				}, 0, function(){overlayContent.removeClass('is-hidden')});
+        //
+        // 			});
+        // 		});
+        // 	}
+        // });
+
+
+
+
+
+
 
         var $blurrable = $('#main, .branding');
         var $navigation_menu = $('#navigation_menu');
