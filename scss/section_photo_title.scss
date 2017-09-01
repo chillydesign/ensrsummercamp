@@ -11,8 +11,8 @@
     h2 {
         padding: 150px 0;
         text-transform: uppercase;
-        text-shadow: 1px 1px 0 white, 2px 2px 0 $brand_color, 3px 3px 0 $brand_color, 4px 4px 0 white;
-
+        font-family: $bourton_font_stack;
+        font-size: 6em;
     }
 
     p {

@@ -49,18 +49,20 @@ ul ul , ul ol, ol ol {font-size: inherit}
 
 a {
 	text-decoration: none;
-	border-bottom: 1px dotted $brand_color;
+	border-bottom:1px dotted saturate(lighten($brand_color,15),10);
 	display: inline-block;
-	border-radius:3px;
 	@include transition(0.3s);
 
 	&:link, &:visited, &:active {
-		color: $brand_color
+		color: saturate(lighten($brand_color,15),10);
 	}
 	&:hover {
-		border-bottom: 1px solid $brand_color;
-		background-color: transparentize($brand_color,0.8)
+		background-color: transparentize($brand_color,0.9)
 	}
+    &:active {
+        position: relative;
+        top:1px;
+    }
 }
 
 

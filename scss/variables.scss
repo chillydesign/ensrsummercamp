@@ -10,9 +10,9 @@ $light_grey: #f1f1f1;
 
 $font_stack:   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-$header_font_stack:   'Baloo Tammudu', Arial, sans-serif;
+$header_font_stack:   'Baloo Tammudu', $font_stack;
 $cursive_font_family: 'Lobster Two', 'cursive';
-
+$bourton_font_stack: BourtonHandExtrudeOutlineBold, $header_font_stack;
 
 
 $transition_time: 0.3s;

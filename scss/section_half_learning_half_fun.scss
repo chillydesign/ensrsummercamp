@@ -1,0 +1,22 @@
+
+// half_Blobs
+#half_learning_blob {
+    width:42%;position:absolute;bottom:0;left:10px;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+#half_fun_blob {
+    width:42%;position:absolute;top:0;right:10px;
+    animation: pulse 1.3s infinite ease-in-out alternate;
+
+}
+@media (min-width: 768px) {
+    #half_learning_blob {
+        right:10px;
+        left: auto;
+    }
+
+}
+
+
+
+// end of half blobs

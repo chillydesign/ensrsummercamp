@@ -48,70 +48,70 @@ import Velocity from '../node_modules/velocity-animate/velocity.js';
 
         // MAP
         // MEMBERS MAP
-    		if (typeof map_location != 'undefined') {
+        if (typeof map_location != 'undefined') {
 
-                console.log(map_location);
+            console.log(map_location);
 
-    			var map_theme = [{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#C5E3BF"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#D1D1B8"}]},{"featureType":"water","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#C6E2FF"}]}];
+            var map_theme = [{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#C5E3BF"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#D1D1B8"}]},{"featureType":"water","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#C6E2FF"}]}];
 
-    			var map_options = {
-    				zoom: 11,
-    				mapTypeControl: true,
-    				scrollwheel: false,
-    				draggable: true,
-    				navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
-    				mapTypeId: google.maps.MapTypeId.ROADMAP,
-    				styles: map_theme
-    			};
-
-
-    			var location_map_container = $('#map_container');
-    			location_map_container.css({
-    				width : '100%',
-    				//height: 560
-    			})
-
-    			var location_map = new google.maps.Map(location_map_container.get(0), map_options);
+            var map_options = {
+                zoom: 11,
+                mapTypeControl: true,
+                scrollwheel: false,
+                draggable: true,
+                navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                styles: map_theme
+            };
 
 
-                var latitude = map_location.lat;
-                var longitude = map_location.lng;
-            	var latlng = new google.maps.LatLng(  latitude , longitude);
-                var marker = new google.maps.Marker({
-        			map: location_map,
-        			position: latlng,
-        			title: map_title
-        		});
+            var location_map_container = $('#map_container');
+            location_map_container.css({
+                width : '100%',
+                //height: 560
+            })
 
-                location_map.setCenter( latlng );
+            var location_map = new google.maps.Map(location_map_container.get(0), map_options);
 
 
+            var latitude = map_location.lat;
+            var longitude = map_location.lng;
+            var latlng = new google.maps.LatLng(  latitude , longitude);
+            var marker = new google.maps.Marker({
+                map: location_map,
+                position: latlng,
+                title: map_title
+            });
 
-    		};
+            location_map.setCenter( latlng );
 
 
 
-            // MASONRY GALLERY
-            var grid = document.querySelector('.gallery_images');
-            if (grid) {
-                var msnry = new Masonry( grid, {
-                  // options...
-                  itemSelector: '.gallery_image',
-                  percentPosition: true,
-                  gutter: 10
-                });
-
-                setTimeout( function(){
-                    msnry.layout();
-                    console.log('redid layout');
-                }, 100 )
-
-            }
-
-
-
-
+        };
         // END OF MAP
+
+
+
+
+        // MASONRY GALLERY
+        var grid = document.querySelector('.gallery_images');
+        if (grid) {
+            var msnry = new Masonry( grid, {
+                // options...
+                itemSelector: '.gallery_image',
+                percentPosition: true,
+                gutter: 10
+            });
+
+            setTimeout( function(){ msnry.layout(); }, 100 );
+            setTimeout( function(){ msnry.layout(); }, 250 );
+
+        }
+
+
+
+
+
 
 
     });

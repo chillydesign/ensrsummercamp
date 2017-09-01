@@ -20,12 +20,18 @@
         top:0;
         z-index: -2;
 
+        li h3 {
+            display: none;
+        }
+
+
         .slide_div {
             width: 100%;
             padding:25%;
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
+
 
         }
     }

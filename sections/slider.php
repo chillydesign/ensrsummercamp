@@ -1,7 +1,7 @@
 <ul class="bxslider">
     <?php while ( have_rows('slides') ) : the_row() ; ?>
-        <?php $image =  get_sub_field('image'); ?>
-        <li> <div class="slide_div"  style="background-image: url(<?php echo $image['url']; ?>);" ></div></li>
+        <?php $image =  get_sub_field('image');   ?>
+        <li> <div class="slide_div"   style="background-image: url(<?php echo $image['url']; ?>);" ></div><h3><?php echo $image['title']; ?></h3></li>
     <?php endwhile; ?>
 </ul>
 
