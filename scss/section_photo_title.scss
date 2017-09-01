@@ -6,6 +6,8 @@
     color: white;
     text-shadow: 0 0 2px transparentize($font_color, 0.5);
     text-align: center;
+    padding:80px 0;
+    overflow: hidden;
 
 
     h2 {
@@ -13,6 +15,7 @@
         text-transform: uppercase;
         font-family: $bourton_font_stack;
         font-size: 6em;
+        font-weight: normal;
     }
 
     p {

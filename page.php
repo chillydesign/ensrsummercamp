@@ -27,7 +27,6 @@ endif;
 
 			<div class="container">
 				<?php the_content(); ?>
-				<?php edit_post_link(); ?>
 			</div>
 
 

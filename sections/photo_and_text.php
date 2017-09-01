@@ -41,7 +41,7 @@ if ( $image_position == 'right' ) {
                         <div  class="image_blob_inner"></div>
                     </div>
                 <?php } else  { ?>
-                    <img src="<?php echo $image['url']; ?>" alt="" />
+                    <img class="sidebar_photo" src="<?php echo $image['url']; ?>" alt="" />
                 <?php }; ?>
 
 
