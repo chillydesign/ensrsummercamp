@@ -2,10 +2,10 @@
 <?php $tdu = get_template_directory_uri(); ?>
 <?php $image_array = []; ?>
 <?php
-foreach( $images as $image ): 
+foreach( $images as $image ):
     $str = '<li  class="gallery_image">';
-    $str .= '<a class="gallery"  href="'. $image['url'] . '">';
-    $str .= '<img src="' . $image['sizes']['medium'] . '"  alt="" />';
+    $str .= '<a data-featherlight="image"  class="gallery"  href="'. $image['url'] . '">';
+    $str .= '<img width="' . $image['sizes']['medium-width'] . '" height="' . $image['sizes']['medium-height'] . '" class="lazy" data-original="' . $image['sizes']['medium'] . '"  alt="" />';
     $str .= '<img  src="' . $tdu . '/img/image_blob3.svg" class="gallery_blob" />';
     $str .= '</a>';
     $str .= '</li>';

@@ -1,7 +1,8 @@
 
 import bxslider from '../node_modules/bxslider/dist/jquery.bxslider.js';
 import Masonry from '../node_modules/masonry-layout/dist/masonry.pkgd.js';
-import Velocity from '../node_modules/velocity-animate/velocity.js';
+import featherlight from '../node_modules/featherlight/release/featherlight.min.js';
+import lazyload from '../node_modules/jquery-lazyload/jquery.lazyload.js';
 
 
 
@@ -12,7 +13,6 @@ import Velocity from '../node_modules/velocity-animate/velocity.js';
         'use strict';
 
 
-    
 
 
 
@@ -113,6 +113,20 @@ import Velocity from '../node_modules/velocity-animate/velocity.js';
             setTimeout( function(){ msnry.layout(); }, 250 );
 
         }
+
+
+
+        // lAZY LOAD GALLERY IMAGES
+        $("img.lazy").lazyload({
+
+            load : function(elements_left, settings) {
+                if (msnry) {
+                     msnry.layout();
+                }
+
+            }
+
+        });
 
 
 

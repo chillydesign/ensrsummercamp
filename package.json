@@ -24,7 +24,9 @@
   "homepage": "https://github.com/chillydesign/blanktheme#readme",
   "dependencies": {
     "bxslider": "^4.2.13",
+    "featherlight": "^1.7.8",
     "jquery": "^3.2.1",
+    "jquery-lazyload": "^1.9.7",
     "masonry-layout": "^4.2.0",
     "velocity-animate": "^1.5.0"
   },
