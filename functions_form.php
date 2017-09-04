@@ -47,7 +47,7 @@ function process_application_form() {
 
 
             // SEND EMAILS TO THE ADMIN AND THE PERSON WHO SUBMITTED
-            send_application_emails($language);
+            // send_application_emails($language);
 
 
 
@@ -68,7 +68,6 @@ function process_application_form() {
 
 
 function send_application_emails($language){
-
 
 
     $headers = 'From: ENSR Summercamp <noreply@ensrsummercamp.ch>' . "\r\n";
@@ -100,18 +99,16 @@ function send_application_emails($language){
 
 function generate_email_body( $opening_paragraph, $language ) {
 
+
     global $sitepress;
     $sitepress->switch_lang($language, true);
+
+
 
     $body = '';
     $body .= '<p>' . $opening_paragraph . '</p>';
     $body .= '<p>' . __('something translated', 'webfactor') . '</p>';
-    $body .= ICL_LANGUAGE_CODE;
-    $body .= ICL_LANGUAGE_CODE;
-    $body .= ICL_LANGUAGE_CODE;
-    $body .= ICL_LANGUAGE_CODE;
-    $body .= ICL_LANGUAGE_CODE;
-    $body .= ICL_LANGUAGE_CODE;
+
 
     return $body;
 
