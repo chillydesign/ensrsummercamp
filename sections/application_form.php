@@ -226,13 +226,15 @@
 
 
 
+
+
         <div class="col-sm-6">
             <h2><?php _e( 'DELF preparation / Cambridge preparation', 'webfactor' ); ?></h2>
             <p><?php _e( 'See the related document attached', 'webfactor' ); ?></p>
 
             <h2><?php _e( 'Hit of the week-end', 'webfactor' ); ?></h2>
-            <input type="radio" name="hit_we" value="enrol"><span>We enrol</span>
-            <input type="radio" name="hit_we" value="dont_enrol"><span>We do not enrol</span>
+            <input type="radio" name="hit_we" value="enrol"><span><?php _e( 'We enroll', 'webfactor' ); ?></span>
+            <input type="radio" name="hit_we" value="dont_enrol"><span><?php _e( 'We do not enroll', 'webfactor' ); ?></span>
             <p><?php _e( 'our child to the weekend at Europa-Park in Germany at the price of CHF 390.-', 'webfactor' ); ?></p>
             <p><?php _e( '<em>*subject to a minimum of 10 pupils</em>', 'webfactor' ); ?></p>
             <p><?php _e( 'The persons who take part to this weekend have to make sure before their arrival in Switzerland that their passeport and visa allow them to enter Germany.', 'webfactor' ); ?></p>

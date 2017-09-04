@@ -44,6 +44,11 @@
 
 
         </div>
+
+        <div id="copyright">
+            <p class="container">&copy; <?php echo date('Y'); ?> Ecole Nouvelle de la Suisse Romande.  Website by <a href="https://webfactor.ch">Webfactor</a>. </p>
+        </div>
+
     </footer>
 
 
