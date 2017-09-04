@@ -118,7 +118,7 @@ header {
         padding: 0;
 
         a {
-            padding:0 20px;
+            padding:20px 20px 0;
 
             &:link,     &:visited,     &:active {
                 color: $brand_color;
@@ -127,7 +127,7 @@ header {
                 color: white;
                 background-color: $brand_color;
                 border: 0;
-                // transform: translateY(-10px);
+                transform: translateY(-10px);
             }
         }
 
