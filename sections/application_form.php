@@ -1,4 +1,5 @@
 <div class="container">
+  <h2 style="margin:-110px 0 30px"><?php _e('Application form', 'webfactor'); ?></h2>
 <form class=""  action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
     <div class="row">
         <div class="col-sm-6">
@@ -269,7 +270,7 @@
                     <div class="col-sm-6"><input type="text" name="place_date"></div>
                 </div>
                 <div style="margin-top:30px;">
-                    <input type="checkbox" name="terms"><span class="float_span"><?php _e( 'We acknowledge having read the general conditions and accepting them.', 'webfactor' ); ?></span>
+                    <input type="checkbox" name="terms"><span class="float_span"><?php _e( 'We acknowledge having read <a href="https://webfactor.ch/projets/ensrsummercamp/wp-content/uploads/2017/09/summer_camp_general_conditions.pdf" target="_blank">the general conditions</a> and accepting them.', 'webfactor' ); ?></span>
                 </div>
                 <input type="hidden" name="action" value="application_form">
                 <input type="hidden" name="current_language" value="<?php echo ICL_LANGUAGE_CODE ; ?>">

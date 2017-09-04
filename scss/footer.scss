@@ -36,6 +36,32 @@ footer {
         }
     }
 
+    .social_media{
+      margin-top: -15px;
+      #facebook {background-image: url(../img/facebook.svg);}
+      #youtube {background-image: url(../img/youtube.svg);}
+      #instagram {background-image: url(../img/instagram.svg);}
+      .social_icon{
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
+        background-size: 35px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: rgba(255,255,255, 0.3);
+        border-radius: 5px;
+        text-indent: -999999px;
+
+        &:hover{
+          background-color: rgba(255,255,255, 0.6);
+          transition: all 0.5s;
+        }
+      }
+    }
+    h2 {
+      font-size: 3em;
+      color: white;
+    }
 
 }
 
@@ -66,6 +92,8 @@ footer {
                 width:90%;
                 max-width: none;
             }
+
+            h2 {  margin-top: 62px;}
         }
 
 
