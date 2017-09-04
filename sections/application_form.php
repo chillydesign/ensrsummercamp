@@ -207,7 +207,7 @@
                 <li><?php _e( '<strong>Paragliding :</strong> CHF 120.-/flight', 'webfactor' ); ?></li>
                 <li><?php _e( '<strong>Tennis court rental :</strong> CHF 10.-/hour/person', 'webfactor' ); ?></li>
                 <li><?php _e( '<strong>Tennis lessons :</strong> CHF 80.-/hour (private lessons)', 'webfactor' ); ?></li>
-                <li><strong>Horse riding :</strong>
+                <li><strong><?php _e( 'Horse riding', 'webfactor' ); ?> :</strong>
                     <ul>
                         <li><?php _e( 'Lunge : CHF 35.-/half hour', 'webfactor' ); ?></li>
                         <li><?php _e( 'Ride : CHF 38.-/hour (only for experienced pupils)', 'webfactor' ); ?></li>
@@ -217,8 +217,8 @@
             <p><?php _e( 'These activities can be organised during the free time only.', 'webfactor' ); ?></p>
 
             <h2><?php _e( 'Transportation', 'webfactor' ); ?></h2>
-            <input type="radio" name="transportation" value="none"><span>On my own</span>
-            <input type="radio" name="transportation" value="gcg"><span>Geneva - Champéry - Geneva*</span>
+            <input type="radio" name="transportation" value="none"><span><?php _e( 'On my own', 'webfactor' ); ?></span>
+            <input type="radio" name="transportation" value="gcg"><span><?php _e( 'Geneva - Champéry - Geneva', 'webfactor' ); ?>*</span>
             <p><?php _e( '<em>*Price per person : CHF 490.-</em>', 'webfactor' ); ?></p>
             <p><?php _e( '<em>*Group rates upon request</em>', 'webfactor' ); ?></p>
 
