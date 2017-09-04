@@ -272,6 +272,7 @@
                     <input type="checkbox" name="terms"><span class="float_span"><?php _e( 'We acknowledge having read the general conditions and accepting them.', 'webfactor' ); ?></span>
                 </div>
                 <input type="hidden" name="action" value="application_form">
+                <input type="hidden" name="current_language" value="<?php echo ICL_LANGUAGE_CODE ; ?>">
                 <input type="submit" value="<?php _e( 'Submit', 'webfactor' ); ?>">
 
             </div>

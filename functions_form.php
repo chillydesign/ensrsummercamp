@@ -17,6 +17,7 @@ function process_application_form() {
     if ( isset($_POST['action'])  && $_POST['action'] == 'application_form'   ) :
 
 
+        $language = ( isset($_POST['current_language']) && $_POST['current_language'] !== '' ) ?  $_POST['current_language'] : 'fr';
 
         $fullname = $_POST['first_name'] . ' ' . $_POST['last_name'];
 
@@ -46,7 +47,7 @@ function process_application_form() {
 
 
             // SEND EMAILS TO THE ADMIN AND THE PERSON WHO SUBMITTED
-            send_application_emails();
+            send_application_emails($language);
 
 
 
@@ -66,7 +67,9 @@ function process_application_form() {
 
 
 
-function send_application_emails(){
+function send_application_emails($language){
+
+
 
     $headers = 'From: ENSR Summercamp <noreply@ensrsummercamp.ch>' . "\r\n";
     $emailheader = file_get_contents(dirname(__FILE__) . '/emails/email_header.php');
@@ -76,14 +79,14 @@ function send_application_emails(){
 
     $paragraph_for_admin = 'This is an opening paragraph for the admin';
     $email_subject_for_admin = 'An email subject for the admin';
-    $email_body_for_admin = generate_email_body($paragraph_for_admin);
+    $email_body_for_admin = generate_email_body($paragraph_for_admin, $language);
     wp_mail( 'harvey.charles@gmail.com' , $email_subject_for_admin, $email_body_for_admin, $headers );
 
 
 
     $paragraph_for_user = 'This is an opening paragraph for the user';
     $email_subject_for_user = 'An email subject for the user';
-    $email_body_for_user = generate_email_body($paragraph_for_admin);
+    $email_body_for_user = generate_email_body($paragraph_for_admin, $language);
     wp_mail( $_POST['email'], $email_subject_for_user, $email_body_for_user, $headers );
 
 
@@ -95,11 +98,20 @@ function send_application_emails(){
 }
 
 
-function generate_email_body( $opening_paragraph ) {
+function generate_email_body( $opening_paragraph, $language ) {
+
+    global $sitepress;
+    $sitepress->switch_lang($language, true);
 
     $body = '';
     $body .= '<p>' . $opening_paragraph . '</p>';
     $body .= '<p>' . __('something translated', 'webfactor') . '</p>';
+    $body .= ICL_LANGUAGE_CODE;
+    $body .= ICL_LANGUAGE_CODE;
+    $body .= ICL_LANGUAGE_CODE;
+    $body .= ICL_LANGUAGE_CODE;
+    $body .= ICL_LANGUAGE_CODE;
+    $body .= ICL_LANGUAGE_CODE;
 
     return $body;
 
