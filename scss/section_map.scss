@@ -1,8 +1,15 @@
 
 .section_map {
     padding: 0;
+    margin-bottom: -30px;
 }
 
 #map_container {
     height: 500px;
 }
+
+.section_colonnes + .section_map {
+    margin-top: -90px;
+}
+
+.section_map + section {margin-top: 30px;}

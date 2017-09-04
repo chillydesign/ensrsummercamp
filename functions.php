@@ -96,8 +96,6 @@ function webfactor_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-        wp_deregister_script('jquery');
-
         wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
 
@@ -168,6 +166,20 @@ function add_slug_to_body_class($classes)
 
     return $classes;
 }
+
+// Add specific CSS class by filter
+add_filter('body_class','my_class_names');
+function my_class_names($classes) {
+    // add 'class-name' to the $classes array
+if(ICL_LANGUAGE_CODE == 'en'){
+    $classes[] = 'lang_en';
+}elseif(ICL_LANGUAGE_CODE == 'fr'){
+        $classes[] = 'lang_fr';
+}
+    // return the $classes array
+    return $classes;
+}
+
 
 // If Dynamic Sidebar Exists
 if (function_exists('register_sidebar'))

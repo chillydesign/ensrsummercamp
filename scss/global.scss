@@ -39,6 +39,7 @@ section {
 @import 'section_map';
 @import 'section_gallery';
 @import 'section_half_learning_half_fun';
+@import 'contact';
 
 
 
@@ -69,7 +70,7 @@ section {
 
 
 
-.button, a.button, a > h6, h6  > a {
+.button, a.button, a > h6, h6  > a, input[type="submit"] {
     background: url('../img/button_blob.svg') no-repeat center center transparent  ;
     background-size: cover;
     color:white;
@@ -97,4 +98,12 @@ section {
 
 
 
+}
+
+.lang_fr .en {
+    display: none;
+}
+
+.lang_en .fr {
+    display: none;
 }

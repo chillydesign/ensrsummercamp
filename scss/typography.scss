@@ -25,8 +25,10 @@ h4 {font-size: 1.69em;padding:0 0 10px;font-weight: bold;text-transform: upperca
 .blob_text h3,
 .blob_text h4,
 .blob_text h5,
-.blob_text h6{
+.blob_text h6,
+h2{
     font-family: $cursive_font_family;
+    font-style: italic;
 }
 
 
@@ -39,7 +41,6 @@ section p, section li {font-size:2em;}
 
 li li, li p {font-size: inherit;}
 ul ul , ul ol, ol ol {font-size: inherit}
-
 
 
 

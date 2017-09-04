@@ -1,0 +1,99 @@
+input[type="text"], input[type="email"] {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: solid 1px $brand_color;
+}
+
+
+label {
+  font-size: 1.5em;
+  margin-top: 24px;
+  display: block;
+}
+
+span.wpcf7-list-item {margin:0;}
+span.wpcf7-radio {
+    margin-top: 18px;
+    display: block;
+}
+input[type="radio"], input[type="checkbox"] {
+    border: solid 2px $brand_color;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    padding: 0
+    ;
+}
+
+input[type="radio"] {border-radius: 10px;}
+
+form{
+  margin-top: -30px;
+  span{
+      font-size: 1.5em;
+      position: relative;
+      top: -8px;
+      padding: 0 5px;
+      display: inline-block;
+  }
+  span.float_span {
+    width: calc(100% - 30px);
+    display: inline;
+    line-height: 160%;
+  }
+  p {
+    font-size: 1.5em;
+  }
+  p, ul {
+    padding-bottom: 10px;
+  }
+  ul {
+    list-style: circle;
+    li{
+      font-size: 1.5em;
+      margin-left: 30px;
+      li {
+        font-size: inherit;
+      }
+    }
+  }
+  h2 {margin-top: 30px; font-size: 2.5em;}
+  hr {
+    margin: 50px 0 10px;
+    border-top: solid 1px #005d9a;
+  }
+
+}
+
+
+textarea {
+    border: solid 1px #005d9a;
+    width: 100%;
+    margin-top: 20px;
+    height: 180px;
+}
+form table td {
+    border: solid 1px;
+    padding: 5px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+ input[type="date"] {
+    height: 32px;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: solid 1px $brand_color;
+    margin-top: 5px;
+}
+
+input[type="file"] {
+    padding: 0;
+    line-height: 0;
+}
+
+input[type="submit"] {
+    margin-top: 50px;
+}
