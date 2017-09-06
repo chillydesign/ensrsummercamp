@@ -147,13 +147,13 @@
             <h2><?php _e( 'Dates of the stay', 'webfactor' ); ?></h2>
             <p><?php _e( 'From 1 to 5 weeks between July 1<sup>st</sup> and August 4<sup>th</sup> 2018. Arrivals on Sundays and departures on Saturdays.', 'webfactor' ); ?></p>
 
-            <input type="radio" name="dates_stay" value="week1"><span class="float_span">01.07.2018 - 07.07.2018</span><br>
-            <input type="radio" name="dates_stay" value="week2"><span class="float_span">08.07.2018 - 14.07.2018</span><br>
-            <input type="radio" name="dates_stay" value="week3"><span class="float_span">15.07.2018 - 21.07.2018</span><br>
-            <input type="radio" name="dates_stay" value="week4"><span class="float_span">22.07.2018 - 28.07.2018</span><br>
-            <input type="radio" name="dates_stay" value="week5"><span class="float_span">29.07.2018 - 04.08.2018</span><br>
-            <input type="radio" name="dates_stay" value="delf"><span class="float_span">08.07.2018 - 04.08.2018 <?php _e( '(DELF preparation)', 'webfactor' ); ?></span><br>
-            <input type="radio" name="dates_stay" value="cambrdidge"><span class="float_span">08.07.2018 - 04.08.2018 <?php _e( '(Cambridge preparation)', 'webfactor' ); ?></span>
+            <input type="checkbox" name="dates_stay" value="week1"><span class="float_span">01.07.2018 - 07.07.2018</span><br>
+            <input type="checkbox" name="dates_stay" value="week2"><span class="float_span">08.07.2018 - 14.07.2018</span><br>
+            <input type="checkbox" name="dates_stay" value="week3"><span class="float_span">15.07.2018 - 21.07.2018</span><br>
+            <input type="checkbox" name="dates_stay" value="week4"><span class="float_span">22.07.2018 - 28.07.2018</span><br>
+            <input type="checkbox" name="dates_stay" value="week5"><span class="float_span">29.07.2018 - 04.08.2018</span><br>
+            <input type="checkbox" name="dates_stay" value="delf"><span class="float_span">08.07.2018 - 04.08.2018 <?php _e( '(DELF preparation)', 'webfactor' ); ?></span><br>
+            <input type="checkbox" name="dates_stay" value="cambrdidge"><span class="float_span">08.07.2018 - 04.08.2018 <?php _e( '(Cambridge preparation)', 'webfactor' ); ?></span>
 
         </div>
 

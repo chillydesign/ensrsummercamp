@@ -32,7 +32,7 @@
 									<h2>Contactez-nous</h2>
 									<p>Tel: +41 21 654 65 00<br> Email : <a href="mailto:info@ensr.ch">info@ensr.ch</a></p>
 									<div class="social_media">
-										<a href="https://www.facebook.com/pages/ENSR/106263256079015" class="social_icon" id="facebook" target="blank">Facebook</a>
+										<a href="https://www.facebook.com/EcoleNouvelleENSR/" class="social_icon" id="facebook" target="blank">Facebook</a>
 										<a href="https://www.instagram.com/ensrlife/" class="social_icon" id="instagram" target="blank">Instagram</a>
 										<a href="https://www.youtube.com/channel/UCe-j7AfjiJFsSPyvlzsmVMQ" class="social_icon" id="youtube" target="blank">Youtube</a>
 									</div>
