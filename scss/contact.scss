@@ -26,6 +26,10 @@ input[type="radio"], input[type="checkbox"] {
     ;
 }
 
+input[type="checkbox"]:checked, input[type="radio"]:checked {
+    background: $brand_color;
+}
+
 input[type="radio"] {border-radius: 10px;}
 
 form{
@@ -61,17 +65,21 @@ form{
   h2 {margin-top: 30px; font-size: 2.5em;}
   hr {
     margin: 50px 0 10px;
-    border-top: solid 1px #005d9a;
+    border-top: solid 1px $brand_color;
   }
 
 }
 
 
 textarea {
-    border: solid 1px #005d9a;
+    border: solid 1px $brand_color;
     width: 100%;
     margin-top: 20px;
     height: 180px;
+}
+
+span.wpcf7-form-control-wrap {
+    display: block;
 }
 form table td {
     border: solid 1px;
@@ -97,3 +105,12 @@ input[type="file"] {
 input[type="submit"] {
     margin-top: 50px;
 }
+
+
+span[role="alert"], .wpcf7-response-output {
+    font-size: 12px;
+    margin-top: 15px;
+    border: none!important;
+}
+
+div.wpcf7-validation-errors {color: red;}
