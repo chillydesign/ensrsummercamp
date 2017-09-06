@@ -276,27 +276,6 @@ function convert_post_to_data($post, $language) {
 
 
 
-
-
-
-        // if ($value == 'delf_a1') {
-        //     $post[$key] = __('', 'webfactor');
-        // } else if ($value == 'delf_a2') {
-        //     $post[$key] = __('', 'webfactor');
-        // } else if ($value == 'cambridge_a1') {
-        //     $post[$key] = __('', 'webfactor');
-        // } else if ($value == 'cambridge_a2') {
-        //     $post[$key] = __('', 'webfactor');
-        // } else if ($value == 'french') {
-        //     $post[$key] = __('', 'webfactor');
-        // } else if ($value == 'english') {
-        //     $post[$key] = __('', 'webfactor');
-        // }
-
-
-
-
-
     }
 
 
@@ -348,5 +327,19 @@ function all_application_fields(){
     );
 
 };
+
+add_action( 'manage_posts_extra_tablenav', 'add_download_link'  );
+function add_download_link($which){
+
+     if ( is_post_type_archive('application') ) {
+        if($which == 'bottom'){
+          $download_link = get_home_url() . '/api/v1/?applications';
+          echo '<div class="alignleft actions"><a class="action button-primary button" href="'. $download_link .'">Télécharger CSV</a></div>';
+        }
+    }
+
+
+}
+
 
 ?>
