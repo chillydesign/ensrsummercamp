@@ -93,7 +93,7 @@ function send_application_emails($data, $language){
 
 
 
-    $headers = 'From: ENSR Summercamp <noreply@ensrsummercamp.ch>' . "\r\n";
+    $headers = 'From: ENSR Summercamp <info@ensr.ch>' . "\r\n";
     $emailheader = file_get_contents(dirname(__FILE__) . '/emails/email_header.php');
     $emailfooter = file_get_contents(dirname(__FILE__) . '/emails/email_footer.php');
     add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
@@ -111,9 +111,9 @@ function send_application_emails($data, $language){
     $sitepress->switch_lang($language, true);
 
     $paragraph_for_user = __('<p>Congratulations!</p><p>You are now registered to our Summer camp in Champéry!
- An enrolment confirmation will be sent to you within a week.</p><p>Should you have any questions, please do not hesitate to contact us on our email address info@ensr.ch</p><p>We thank you for your trust!</p><p>The ENSR team</p><br /><br /><p><strong>Registration summary :</strong></p>');
+ An enrolment confirmation will be sent to you within a week.</p><p>Should you have any questions, please do not hesitate to contact us on our email address info@ensr.ch</p><p>We thank you for your trust!</p><p>The ENSR team</p><br /><br /><p><strong>Registration summary :</strong></p>', 'webfactor');
 
-    $email_subject_for_user = __('Your application to ENSR Summer Camp');
+    $email_subject_for_user = __('Your application to ENSR Summer Camp', 'webfactor');
     $data_for_user = $data;
     // remove insurance and photo file for user email
     $data_for_user['insurance_attestation'] = '';
