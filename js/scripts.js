@@ -133,6 +133,7 @@ import lazyload from '../node_modules/jquery-lazyload/jquery.lazyload.js';
         // APPLICATION FORM VALIDATION
         var $application_form = $('#application_form');
         var $application_submit_button = $('#application_submit_button');
+        var $form_submit_warning = $('#form_submit_warning').hide();
         $application_submit_button.attr('disabled','disabled').addClass('button_disabled');
 
 
@@ -169,18 +170,28 @@ import lazyload from '../node_modules/jquery-lazyload/jquery.lazyload.js';
                 }
 
 
-
             };
 
 
             if ($amount_empty < 1 ) {
                 $application_submit_button.removeAttr('disabled').removeClass('button_disabled');
+                $form_submit_warning.hide();
             } else {
                 $application_submit_button.attr('disabled','disabled').addClass('button_disabled');
             }
 
 
+        });
+
+        $application_submit_button.on('click', function(){
+            if ( $application_submit_button.hasClass('button_disabled') ) {
+                $form_submit_warning.show();
+            } else {
+
+            }
         })
+
+
 
 
         // var $necessary_fields = [];
