@@ -130,6 +130,19 @@ import lazyload from '../node_modules/jquery-lazyload/jquery.lazyload.js';
 
 
 
+        // APPLICATION FORM VALIDATION
+        var $application_submit_button = $('#application_submit_button');
+        $application_submit_button.attr('disabled','disabled');
+
+        var $necessary_fields = ['first_name', 'last_name' ];
+
+        for (var i = 0; i < $necessary_fields.length; i++) {
+            var $field_name = $necessary_fields[i];
+            var $field = $("input[name='" + $field_name +  "']" );
+            console.log($field.first());
+
+        }
+
 
 
 

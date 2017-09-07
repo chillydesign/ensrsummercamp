@@ -7,7 +7,7 @@
       <p class="problem"> <?php _e( 'There was a problem submitting your form. Please try again.', 'webfactor' ); ?>  </p>
   <?php endif; ?>
 
-<form class=""  action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post"  enctype="multipart/form-data">
+<form id="application_form"  action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post"  enctype="multipart/form-data">
     <div class="row">
         <div class="col-sm-6">
             <h2><?php _e( 'Personal Information', 'webfactor' ); ?></h2>
@@ -283,7 +283,7 @@
                 </div>
                 <input type="hidden" name="action" value="application_form">
                 <input type="hidden" name="current_language" value="<?php echo ICL_LANGUAGE_CODE ; ?>">
-                <input type="submit" value="<?php _e( 'Submit', 'webfactor' ); ?>">
+                <input id="application_submit_button" type="submit" value="<?php _e( 'Submit', 'webfactor' ); ?>">
 
             </div>
         </div>
