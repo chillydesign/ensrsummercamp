@@ -5,8 +5,16 @@
     <title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
         <?php $tdu =  get_template_directory_uri(); ?>
         <link href="//www.google-analytics.com" rel="dns-prefetch">
-        <link href="<?php echo $tdu; ?>/img/icons/favicon.ico" rel="shortcut icon">
-        <link href="<?php echo $tdu; ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $tdu; ?>/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $tdu; ?>/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $tdu; ?>/img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="<?php echo $tdu; ?>/img/favicon/manifest.json">
+        <link rel="mask-icon" href="<?php echo $tdu; ?>/img/favicon/safari-pinned-tab.svg" color="#005ca9">
+        <meta name="apple-mobile-web-app-title" content="ENSR Summer Camp">
+        <meta name="application-name" content="ENSR Summer Camp">
+        <meta name="theme-color" content="#ffffff">
+
         <link rel="stylesheet" type="text/css" href="<?php echo $tdu; ?>/MyFontsWebfontsKit.css">
         <link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lobster+Two:700i" rel="stylesheet">
