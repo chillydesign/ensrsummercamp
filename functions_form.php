@@ -92,27 +92,34 @@ function process_application_form() {
 function send_application_emails($data, $language){
 
 
+
     $headers = 'From: ENSR Summercamp <noreply@ensrsummercamp.ch>' . "\r\n";
     $emailheader = file_get_contents(dirname(__FILE__) . '/emails/email_header.php');
     $emailfooter = file_get_contents(dirname(__FILE__) . '/emails/email_footer.php');
     add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
 
 
-    $paragraph_for_admin = 'This is an opening paragraph for the admin';
-    $email_subject_for_admin = 'An email subject for the admin';
-    $email_body_for_admin = generate_email_body($paragraph_for_admin, 'fr', $data);
-    $email_content_for_admin = $emailheader . $email_body_for_admin . $emailfooter;
+    $paragraph_for_admin = '<p>Une nouvelle inscription a été enregistrée pour le camp d’été :</p><br /><br />';
+    $email_subject_for_admin = 'Nouvelle inscription au Camp d’été ENSR';
+    $app_summary_for_admin = generate_application_summary( 'fr', $data);
+    $email_content_for_admin = $emailheader  . $paragraph_for_admin .  $app_summary_for_admin . $emailfooter;
     wp_mail( 'harvey.charles@gmail.com' , $email_subject_for_admin, $email_content_for_admin, $headers );
 
 
 
-    $paragraph_for_user = 'This is an opening paragraph for the user';
-    $email_subject_for_user = 'An email subject for the user';
+    global $sitepress;
+    $sitepress->switch_lang($language, true);
+
+    $paragraph_for_user = __('<p>Congratulations!</p><p>You are now registered to our Summer camp in Champéry!
+ An enrolment confirmation will be sent to you within a week.</p><p>Should you have any questions, please do not hesitate to contact us on our email address info@ensr.ch</p><p>We thank you for your trust!</p><p>The ENSR team</p><br /><br /><p><strong>Registration summary :</strong></p>');
+
+    $email_subject_for_user = __('Your application to ENSR Summer Camp');
     $data_for_user = $data;
+    // remove insurance and photo file for user email
     $data_for_user['insurance_attestation'] = '';
     $data_for_user['photo'] = '';
-    $email_body_for_user = generate_email_body($paragraph_for_user, $language, $data_for_user);
-    $email_content_for_user = $emailheader . $email_body_for_user . $emailfooter;
+    $app_summary_for_user = generate_application_summary( $language, $data_for_user);
+    $email_content_for_user = $emailheader . $paragraph_for_user .  $app_summary_for_user . $emailfooter;
 
     wp_mail( $_POST['email'], $email_subject_for_user, $email_content_for_user, $headers );
 
@@ -125,15 +132,13 @@ function send_application_emails($data, $language){
 }
 
 
-function generate_email_body( $opening_paragraph, $language, $data ) {
+function generate_application_summary( $language, $data ) {
 
 
     global $sitepress;
     $sitepress->switch_lang($language, true);
 
     $body = '';
-
-    $body .= '<p>' . __($opening_paragraph, 'webfactor') . '</p> <hr />';
 
     foreach (all_application_fields() as $field => $translation) {
         if ( isset($data[$field]) && $data[$field] != '' ) {
