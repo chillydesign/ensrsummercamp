@@ -6,11 +6,12 @@
         <?php $tdu =  get_template_directory_uri(); ?>
         <link href="//www.google-analytics.com" rel="dns-prefetch">
 
-        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $tdu; ?>/img/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $tdu; ?>/img/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $tdu; ?>/img/favicon/favicon-16x16.png">
-        <link rel="manifest" href="<?php echo $tdu; ?>/img/favicon/manifest.json">
-        <link rel="mask-icon" href="<?php echo $tdu; ?>/img/favicon/safari-pinned-tab.svg" color="#005ca9">
+        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $tdu; ?>/img/favicon/apple-touch-icon.png?v=2">
+        <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $tdu; ?>/img/favicon/favicon-32x32.png?v=2">
+        <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $tdu; ?>/img/favicon/favicon-16x16.png?v=2">
+        <link rel="manifest" href="<?php echo $tdu; ?>/img/favicon/manifest.json?v=2">
+        <link rel="mask-icon" href="<?php echo $tdu; ?>/img/favicon/safari-pinned-tab.svg?v=2" color="#005ca9">
+        <link rel="shortcut icon" href="/favicon.ico?v=2">
         <meta name="apple-mobile-web-app-title" content="ENSR Summer Camp">
         <meta name="application-name" content="ENSR Summer Camp">
         <meta name="theme-color" content="#ffffff">
