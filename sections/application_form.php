@@ -13,42 +13,42 @@
             <h2><?php _e( 'Personal Information', 'webfactor' ); ?></h2>
 
             <div class="row">
-                <div class="col-sm-6"><label for="first_name"><?php _e( 'First Name', 'webfactor' ); ?></label> </div>
+                <div class="col-sm-6"><label for="first_name"><?php _e( 'First Name', 'webfactor' ); ?>*</label> </div>
                 <div class="col-sm-6"><input type="text" name="first_name"></div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6"><label for="last_name"><?php _e( 'Last Name', 'webfactor' ); ?></label> </div>
+                <div class="col-sm-6"><label for="last_name"><?php _e( 'Last Name', 'webfactor' ); ?>*</label> </div>
                 <div class="col-sm-6"><input type="text" name="last_name"></div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6"><label for="birth_date"><?php _e( 'Birth Date', 'webfactor' ); ?></label> </div>
+                <div class="col-sm-6"><label for="birth_date"><?php _e( 'Birth Date', 'webfactor' ); ?>*</label> </div>
                 <div class="col-sm-6"><input type="date" name="birth_date"></div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6"><label for="sex"><?php _e( 'Sex', 'webfactor' ); ?></label> </div>
+                <div class="col-sm-6"><label for="sex"><?php _e( 'Sex', 'webfactor' ); ?>*</label> </div>
                 <div class="col-sm-6" style="padding-top:15px;"><input type="radio" name="sex" value="male"><span><?php _e( 'Male', 'webfactor' ); ?></span><input type="radio" name="sex" value="female"><span><?php _e( 'Female', 'webfactor' ); ?></span> </div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6"><label for="nationality"><?php _e( 'Nationality', 'webfactor' ); ?></label> </div>
+                <div class="col-sm-6"><label for="nationality"><?php _e( 'Nationality', 'webfactor' ); ?>*</label> </div>
                 <div class="col-sm-6"><input type="text" name="nationality"></div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6"><label for="passport_number"><?php _e( 'Passport No.', 'webfactor' ); ?></label> </div>
+                <div class="col-sm-6"><label for="passport_number"><?php _e( 'Passport No.', 'webfactor' ); ?>*</label> </div>
                 <div class="col-sm-6"><input type="text" name="passport_number"></div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6"><label for="valid_until"><?php _e( 'Valid until', 'webfactor' ); ?></label> </div>
+                <div class="col-sm-6"><label for="valid_until"><?php _e( 'Valid until', 'webfactor' ); ?>*</label> </div>
                 <div class="col-sm-6"><input type="text" name="valid_until"></div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6"><label for="mother_tongue"><?php _e( 'Mother tongue', 'webfactor' ); ?></label> </div>
+                <div class="col-sm-6"><label for="mother_tongue"><?php _e( 'Mother tongue', 'webfactor' ); ?>*</label> </div>
                 <div class="col-sm-6"><input type="text" name="mother_tongue"></div>
             </div>
 
@@ -63,32 +63,32 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-6"><label for="representative"><?php _e( 'Name of parents or legal representative', 'webfactor' ); ?></label> </div>
+                <div class="col-sm-6"><label for="representative"><?php _e( 'Name of parents or legal representative', 'webfactor' ); ?>*</label> </div>
                 <div class="col-sm-6"><textarea name="representative"  cols="30" rows="4"></textarea></div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6"><label for="address"><?php _e( 'Private address', 'webfactor' ); ?></label> </div>
+                <div class="col-sm-6"><label for="address"><?php _e( 'Private address', 'webfactor' ); ?>*</label> </div>
                 <div class="col-sm-6"><input type="text" name="address"></div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6"><label for="city_country"><?php _e( 'City / Country', 'webfactor' ); ?></label> </div>
+                <div class="col-sm-6"><label for="city_country"><?php _e( 'City / Country', 'webfactor' ); ?>*</label> </div>
                 <div class="col-sm-6"><input type="text" name="city_country"></div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6"><label for="email"><?php _e( 'Email', 'webfactor' ); ?></label> </div>
+                <div class="col-sm-6"><label for="email"><?php _e( 'Email', 'webfactor' ); ?>*</label> </div>
                 <div class="col-sm-6"><input type="email" name="email"></div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6"><label for="phone"><?php _e( 'Phone', 'webfactor' ); ?></label> </div>
+                <div class="col-sm-6"><label for="phone"><?php _e( 'Phone', 'webfactor' ); ?>*</label> </div>
                 <div class="col-sm-6"><input type="text" name="phone"></div>
             </div>
 
             <div class="row">
-                <div class="col-sm-6"><label for="mobile_phone"><?php _e( 'Mobile phone', 'webfactor' ); ?></label> </div>
+                <div class="col-sm-6"><label for="mobile_phone"><?php _e( 'Mobile phone', 'webfactor' ); ?>*</label> </div>
                 <div class="col-sm-6"><input type="text" name="mobile_phone"></div>
             </div>
 
@@ -106,7 +106,7 @@
             <input type="file" name="photo">
 
 
-            <h2><?php _e( 'Choice of lessons', 'webfactor' ); ?></h2>
+            <h2><?php _e( 'Choice of lessons', 'webfactor' ); ?>*</h2>
             <input type="checkbox" name="lesson_choice[]" value="delf_a1"><span class="float_span"><?php _e( 'Preparation DELF - level A1', 'webfactor' ); ?></span><br>
             <input type="checkbox" name="lesson_choice[]" value="delf_a2"><span class="float_span"><?php _e( 'Preparation DELF - level A2', 'webfactor' ); ?></span><br>
             <input type="checkbox" name="lesson_choice[]" value="cambridge_a1"><span class="float_span"><?php _e( 'Preparation Cambridge - level A1', 'webfactor' ); ?></span><br>
@@ -121,8 +121,8 @@
             <table>
                 <tr>
                     <td></td>
-                    <td><?php _e( 'Spoken', 'webfactor' ); ?></td>
-                    <td><?php _e( 'Written', 'webfactor' ); ?></td>
+                    <td><?php _e( 'Spoken', 'webfactor' ); ?>*</td>
+                    <td><?php _e( 'Written', 'webfactor' ); ?>*</td>
                 </tr>
                 <tr>
                     <td><?php _e( 'Never studied', 'webfactor' ); ?></td>
@@ -151,7 +151,7 @@
                 </tr>
             </table>
 
-            <h2><?php _e( 'Dates of the stay', 'webfactor' ); ?></h2>
+            <h2><?php _e( 'Dates of the stay', 'webfactor' ); ?>*</h2>
             <p><?php _e( 'From 1 to 5 weeks between July 1<sup>st</sup> and August 4<sup>th</sup> 2018. Arrivals on Sundays and departures on Saturdays.', 'webfactor' ); ?></p>
 
             <input type="checkbox" name="dates_stay[]" value="week1"><span class="float_span">01.07.2018 - 07.07.2018</span><br>
@@ -223,11 +223,11 @@
             </ul>
             <p><?php _e( 'These activities can be organised during the free time only.', 'webfactor' ); ?></p>
 
-            <h2><?php _e( 'Transportation', 'webfactor' ); ?></h2>
+            <h2><?php _e( 'Transportation', 'webfactor' ); ?>*</h2>
             <input type="radio" name="transportation" value="none"><span><?php _e( 'On my own', 'webfactor' ); ?></span>
-            <input type="radio" name="transportation" value="gcg"><span><?php _e( 'Geneva - Champéry - Geneva', 'webfactor' ); ?>*</span>
-            <p><?php _e( '<em>*Price per person : CHF 490.-</em>', 'webfactor' ); ?></p>
-            <p><?php _e( '<em>*Group rates upon request</em>', 'webfactor' ); ?></p>
+            <input type="radio" name="transportation" value="gcg"><span><?php _e( 'Geneva - Champéry - Geneva', 'webfactor' ); ?>&dagger;</span>
+            <p>&dagger;<?php _e( '<em>Price per person : CHF 490.-</em>', 'webfactor' ); ?></p>
+            <p>&dagger;<?php _e( '<em>Group rates upon request</em>', 'webfactor' ); ?></p>
 
         </div>
 
@@ -239,14 +239,14 @@
             <h2><?php _e( 'DELF preparation / Cambridge preparation', 'webfactor' ); ?></h2>
             <p><?php _e( 'See the related document attached', 'webfactor' ); ?></p>
 
-            <h2><?php _e( 'Hit of the week-end', 'webfactor' ); ?></h2>
+            <h2><?php _e( 'Hit of the week-end', 'webfactor' ); ?>*</h2>
             <input type="radio" name="hit_we" value="enrol"><span><?php _e( 'We enroll', 'webfactor' ); ?></span>
             <input type="radio" name="hit_we" value="dont_enrol"><span><?php _e( 'We do not enroll', 'webfactor' ); ?></span>
             <p><?php _e( 'our child to the weekend at Europa-Park in Germany at the price of CHF 390.-', 'webfactor' ); ?></p>
-            <p><?php _e( '<em>*subject to a minimum of 10 pupils</em>', 'webfactor' ); ?></p>
+            <p>&dagger;<?php _e( '<em>subject to a minimum of 10 pupils</em>', 'webfactor' ); ?></p>
             <p><?php _e( 'The persons who take part to this weekend have to make sure before their arrival in Switzerland that their passeport and visa allow them to enter Germany.', 'webfactor' ); ?></p>
 
-            <h2><?php _e( 'Insurances', 'webfactor' ); ?></h2>
+            <h2><?php _e( 'Insurances', 'webfactor' ); ?>*</h2>
             <input type="radio" name="insurance" value="buy"><span class="float_span"><?php _e( 'Health and accident insurance, compulsory for residents out of EU/EEA/Switzerland, at CHF 150.-/week (franchise/excess of CHF 0.-)', 'webfactor' ); ?></span>
             <p><?php _e( 'Only for residents of Switzerland/EU/EEA :', 'webfactor' ); ?></p>
                 <input type="radio" name="insurance" value="own"><span class="float_span"><?php _e( 'My own insurance (name + please send us a certificate)', 'webfactor' ); ?></span>
@@ -275,15 +275,16 @@
 
 
                 <div class="row" style="margin-top:50px;">
-                    <div class="col-sm-6"><label for="place_date"><?php _e( 'Place and date', 'webfactor' ); ?></label> </div>
+                    <div class="col-sm-6"><label for="place_date"><?php _e( 'Place and date', 'webfactor' ); ?>*</label> </div>
                     <div class="col-sm-6"><input type="text" name="place_date"></div>
                 </div>
                 <div style="margin-top:30px;">
-                    <input type="checkbox" name="terms"><span class="float_span"><?php _e( 'We acknowledge having read <a href="https://webfactor.ch/projets/ensrsummercamp/wp-content/uploads/2017/09/summer_camp_general_conditions.pdf" target="_blank">the general conditions</a> and accepting them.', 'webfactor' ); ?></span>
+                    <input type="checkbox" name="terms"><span class="float_span"><?php _e( 'We acknowledge having read <a href="https://webfactor.ch/projets/ensrsummercamp/wp-content/uploads/2017/09/summer_camp_general_conditions.pdf" target="_blank">the general conditions</a> and accepting them.', 'webfactor' ); ?>*</span>
                 </div>
                 <input type="hidden" name="action" value="application_form">
                 <input type="hidden" name="current_language" value="<?php echo ICL_LANGUAGE_CODE ; ?>">
                 <input id="application_submit_button" type="submit" value="<?php _e( 'Submit', 'webfactor' ); ?>">
+                <p id="form_submit_warning"><?php _e( 'Please fill in all fields with a * before submitting the form', 'webfactor' ); ?></p>
 
             </div>
         </div>
