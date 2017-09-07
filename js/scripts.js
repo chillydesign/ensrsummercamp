@@ -136,8 +136,10 @@ import lazyload from '../node_modules/jquery-lazyload/jquery.lazyload.js';
         $application_submit_button.attr('disabled','disabled').addClass('button_disabled');
 
 
-        var $necessary_field_names = ['first_name', 'last_name' , 'nationality', 'terms' , 'sex', 'hear_about_summer_camp[]'];
+        var $necessary_field_names = ['first_name' , 'last_name', 'birth_date', 'sex', 'nationality', 'passport_number', 'valid_until', 'mother_tongue', 'representative', 'address', 'city_country', 'email', 'phone', 'mobile_phone', 'lesson_choice[]', 'level_spoken', 'level_written', 'dates_stay[]', 'transportation', 'hit_we', 'insurance', 'place_date'];
         var $amount_empty = 0;
+
+
 
 
         $('input, textarea', $application_form).on('change keyup', function(){
