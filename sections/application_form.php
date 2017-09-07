@@ -1,5 +1,12 @@
 <div class="container">
   <h2 style="margin:-110px 0 30px"><?php _e('Application form', 'webfactor'); ?></h2>
+  <?php if(isset($_GET['success'])) : ?>
+      <p class="success"> <?php _e( 'The form was submitted succesfully.', 'webfactor' ); ?>  </p>
+  <?php endif; ?>
+  <?php if(isset($_GET['problem'])) : ?>
+      <p class="problem"> <?php _e( 'There was a problem submitting your form. Please try again.', 'webfactor' ); ?>  </p>
+  <?php endif; ?>
+
 <form class=""  action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post"  enctype="multipart/form-data">
     <div class="row">
         <div class="col-sm-6">

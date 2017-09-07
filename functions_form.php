@@ -73,8 +73,8 @@ function process_application_form() {
 
 
 
-            //    $redirect = get_home_url(); // . '/redirect-to-this-page/';
-            //    wp_redirect( $referer . '?success' );
+            //  $redirect = get_home_url(); // . '/redirect-to-this-page/';
+            wp_redirect( $referer . '?success' );
         }
 
 
@@ -100,16 +100,21 @@ function send_application_emails($data, $language){
 
     $paragraph_for_admin = 'This is an opening paragraph for the admin';
     $email_subject_for_admin = 'An email subject for the admin';
-    $email_body_for_admin = generate_email_body($paragraph_for_admin, $language, $data);
-    //    wp_mail( 'harvey.charles@gmail.com' , $email_subject_for_admin, $email_body_for_admin, $headers );
+    $email_body_for_admin = generate_email_body($paragraph_for_admin, 'fr', $data);
+    $email_content_for_admin = $emailheader . $email_body_for_admin . $emailfooter;
+    wp_mail( 'harvey.charles@gmail.com' , $email_subject_for_admin, $email_content_for_admin, $headers );
 
 
 
     $paragraph_for_user = 'This is an opening paragraph for the user';
     $email_subject_for_user = 'An email subject for the user';
-    $email_body_for_user = generate_email_body($paragraph_for_admin, $language, $data);
-    echo $email_body_for_user;
-    //    wp_mail( $_POST['email'], $email_subject_for_user, $email_body_for_user, $headers );
+    $data_for_user = $data;
+    $data_for_user['insurance_attestation'] = '';
+    $data_for_user['photo'] = '';
+    $email_body_for_user = generate_email_body($paragraph_for_user, $language, $data_for_user);
+    $email_content_for_user = $emailheader . $email_body_for_user . $emailfooter;
+
+    wp_mail( $_POST['email'], $email_subject_for_user, $email_content_for_user, $headers );
 
 
 
@@ -126,17 +131,15 @@ function generate_email_body( $opening_paragraph, $language, $data ) {
     global $sitepress;
     $sitepress->switch_lang($language, true);
 
-
-
     $body = '';
-    $body .= '<p>' . $opening_paragraph . '</p>';
-    $body .= '<p>' . __('something translated', 'webfactor') . '</p>';
+
+    $body .= '<p>' . __($opening_paragraph, 'webfactor') . '</p> <hr />';
 
     foreach (all_application_fields() as $field => $translation) {
         if ( isset($data[$field]) && $data[$field] != '' ) {
 
             if ($field == 'terms') {
-
+                // dont show terms
             } else {
                 $body .= '<p><strong>' . __($translation, 'webfactor') . '</strong>: <br /> ';
 
@@ -311,8 +314,6 @@ function convert_post_to_data($application_id, $post, $photo_file, $insurance_fi
 
     return $post;
 }
-
-
 
 
 

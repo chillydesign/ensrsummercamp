@@ -73,8 +73,8 @@
         }
         .button-td:hover,
         .button-a:hover {
-            background: #4a417b !important;
-            border-color: #4a417b !important;
+            background: #005d9a !important;
+            border-color: #005d9a !important;
         }
         table.cpmdt_email_table {width:100%;}
         table.cpmdt_email_table td {border: solid 1px;}
@@ -131,7 +131,7 @@
                 <tr>
 					<td bgcolor="#ffffff" align="center">
 
-                        <a href="http://courscomplementaires.ch" target="_blank"><img src="http://courscomplementaires.ch/wp-content/uploads/2017/02/courscomplementaires-header.jpg" width="100%" height=""  border="0" align="left" style="width: 100%; max-width:600px; margin-bottom: 15px;">
+                        <a href="https://webfactor.ch/projets/ensrsummercamp/" target="_blank"><img src="https://webfactor.ch/projets/ensrsummercamp/wp-content/themes/ensrsummercamp/img/header-email-summercamp.jpg" width="100%" height=""  border="0" align="left" style="width: 100%; max-width:600px; margin-bottom: 15px;">
 						</a>
 					</td>
                 </tr>
