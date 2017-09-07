@@ -1,1 +1,0 @@
-!function(e,n,o){e(function(){"use strict";var n=e("#navigation_menu");e("#menu_button").on("click",function(){n.toggleClass("menu_visible")}),e(document).on("keydown",function(o){27==o.keyCode&&(n.removeClass("menu_visible"),e(".search_box").removeClass("visible"))})})}(jQuery);
