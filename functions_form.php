@@ -45,8 +45,27 @@ function process_application_form() {
                 }
             }
 
+
+
+            //if filesize of upload is greater than 0 bytes, ie it exists
+            // add or replace the file already there
+            $photo_file = $_FILES['photo'];
+            if ($photo_file['size'] > 0 ) {
+                $picture_id = application_add_file_upload( $photo_file, $new_application );
+                $thumbnail = set_post_thumbnail( $new_application, $picture_id );
+            }
+
+
+
+            $insurance_file = $_FILES['insurance_attestation'];
+            if ($insurance_file['size'] > 0 ) {
+                $file_id = application_add_file_upload( $insurance_file, $new_application );
+                update_field( 'insurance_attestation', $file_id,  $new_application  );
+            }
+
+
             // get raw post data, and convert properties and values to nice string
-            $data = convert_post_to_data($_POST, $language);
+            $data = convert_post_to_data($new_application, $_POST, $photo_file, $insurance_file,    $language);
 
 
             // SEND EMAILS TO THE ADMIN AND THE PERSON WHO SUBMITTED
@@ -114,17 +133,17 @@ function generate_email_body( $opening_paragraph, $language, $data ) {
     $body .= '<p>' . __('something translated', 'webfactor') . '</p>';
 
     foreach (all_application_fields() as $field => $translation) {
-        if ( $data[$field] && $data[$field] != '' ) {
+        if ( isset($data[$field]) && $data[$field] != '' ) {
 
             if ($field == 'terms') {
 
             } else {
-                $body .= '<p><strong>' . __($translation, 'webfactor') . '</strong>: ';
+                $body .= '<p><strong>' . __($translation, 'webfactor') . '</strong>: <br /> ';
 
                 if (  is_array( $data[$field] )   ) {
                     $body .=    implode($data[$field], ', ') ;
                 } else {
-                    $body .=  $data[$field] ;
+                    $body .=   nl2br($data[$field]) ;
                 }
 
                 $body .= '</p>';
@@ -143,8 +162,8 @@ function generate_email_body( $opening_paragraph, $language, $data ) {
 
 
 
-function convert_post_to_data($post, $language) {
-    global $sitepress;
+function convert_post_to_data($application_id, $post, $photo_file, $insurance_file,  $language) {
+    global $sitepress, $wpdb;
     $sitepress->switch_lang($language, true);
 
 
@@ -163,9 +182,6 @@ function convert_post_to_data($post, $language) {
             } else if ($value == 'more_then_four_years') {
                 $post[$key] = __('+4 years', 'webfactor');
             }
-
-
-
 
         } else if ( $key == 'dates_stay') {
 
@@ -273,6 +289,20 @@ function convert_post_to_data($post, $language) {
 
         }
 
+        // IF they uploaded an insurance doc, or a photo, show the link to it
+        if ( $insurance_file['size'] > 0 ) {
+
+            $insurance_id = get_field( 'insurance_attestation', $application_id  );
+            $insurance_link = $wpdb->get_row( $wpdb->prepare( "SELECT guid FROM $wpdb->posts WHERE ID =  %d ", $insurance_id ) );
+            $post['insurance_attestation'] = $insurance_link->guid;
+        }
+        if ( $photo_file['size'] > 0 ) {
+            $photo_id = get_field( 'insurance_attestation', $application_id  );
+            $photo_link = $wpdb->get_row( $wpdb->prepare( "SELECT guid FROM $wpdb->posts WHERE ID =  %d ", $photo_id ) );
+            $post['photo'] = $photo_link->guid;
+        }
+
+
 
 
 
@@ -328,13 +358,37 @@ function all_application_fields(){
 
 };
 
+
+
+function application_add_file_upload($file, $parent){
+    $upload = wp_upload_bits($file['name'], null, file_get_contents( $file['tmp_name'] ) );
+    $wp_filetype = wp_check_filetype( basename( $upload['file'] ), null );
+    $wp_upload_dir = wp_upload_dir();
+
+
+    $attachment = array(
+        'guid' => $wp_upload_dir['baseurl'] . _wp_relative_upload_path( $upload['file'] ),
+        'post_mime_type' => $wp_filetype['type'],
+        'post_title' => preg_replace('/\.[^.]+$/', '', basename( $upload['file'] )),
+        'post_content' => '',
+        'post_status' => 'inherit'
+    );
+
+    $attach_id = wp_insert_attachment( $attachment, $upload['file'], $parent );
+
+
+    return $attach_id;
+
+}
+
+
 add_action( 'manage_posts_extra_tablenav', 'add_download_link'  );
 function add_download_link($which){
 
-     if ( is_post_type_archive('application') ) {
+    if ( is_post_type_archive('application') ) {
         if($which == 'bottom'){
-          $download_link = get_home_url() . '/api/v1/?applications';
-          echo '<div class="alignleft actions"><a class="action button-primary button" href="'. $download_link .'">Télécharger CSV</a></div>';
+            $download_link = get_home_url() . '/api/v1/?applications';
+            echo '<div class="alignleft actions"><a class="action button-primary button" href="'. $download_link .'">Télécharger CSV</a></div>';
         }
     }
 

@@ -428,6 +428,8 @@ function create_post_type_application()
             'not_found_in_trash' => __('No Applications found in Trash', 'webfactor')
         ),
         'public' => true,
+        'publicly_queryable' => false, // dont allow to see on front end
+        'exclude_from_search' => true, // dont show in search
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive' => true,
         'supports' => array(

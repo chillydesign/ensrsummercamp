@@ -1,6 +1,6 @@
 <div class="container">
   <h2 style="margin:-110px 0 30px"><?php _e('Application form', 'webfactor'); ?></h2>
-<form class=""  action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+<form class=""  action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post"  enctype="multipart/form-data">
     <div class="row">
         <div class="col-sm-6">
             <h2><?php _e( 'Personal Information', 'webfactor' ); ?></h2>
