@@ -1,6 +1,13 @@
 <div class="container">
   <h2 style="margin:-110px 0 30px"><?php _e('Application form', 'webfactor'); ?></h2>
-<form class=""  action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+  <?php if(isset($_GET['success'])) : ?>
+      <p class="success"> <?php _e( 'The form was submitted succesfully.', 'webfactor' ); ?>  </p>
+  <?php endif; ?>
+  <?php if(isset($_GET['problem'])) : ?>
+      <p class="problem"> <?php _e( 'There was a problem submitting your form. Please try again.', 'webfactor' ); ?>  </p>
+  <?php endif; ?>
+
+<form id="application_form"  action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post"  enctype="multipart/form-data">
     <div class="row">
         <div class="col-sm-6">
             <h2><?php _e( 'Personal Information', 'webfactor' ); ?></h2>
@@ -100,12 +107,12 @@
 
 
             <h2><?php _e( 'Choice of lessons', 'webfactor' ); ?></h2>
-            <input type="checkbox" name="lesson_choice" value="delf_a1"><span class="float_span"><?php _e( 'Preparation DELF - level A1', 'webfactor' ); ?></span><br>
-            <input type="checkbox" name="lesson_choice" value="delf_a2"><span class="float_span"><?php _e( 'Preparation DELF - level A2', 'webfactor' ); ?></span><br>
-            <input type="checkbox" name="lesson_choice" value="cambridge_a1"><span class="float_span"><?php _e( 'Preparation Cambridge - level A1', 'webfactor' ); ?></span><br>
-            <input type="checkbox" name="lesson_choice" value="cambridge_a2"><span class="float_span"><?php _e( 'Preparation Cambridge - level A2', 'webfactor' ); ?></span><br>
-            <input type="checkbox" name="lesson_choice" value="french"><span class="float_span"><?php _e( 'French', 'webfactor' ); ?></span><br>
-            <input type="checkbox" name="lesson_choice" value="english"><span class="float_span"><?php _e( 'English', 'webfactor' ); ?></span>
+            <input type="checkbox" name="lesson_choice[]" value="delf_a1"><span class="float_span"><?php _e( 'Preparation DELF - level A1', 'webfactor' ); ?></span><br>
+            <input type="checkbox" name="lesson_choice[]" value="delf_a2"><span class="float_span"><?php _e( 'Preparation DELF - level A2', 'webfactor' ); ?></span><br>
+            <input type="checkbox" name="lesson_choice[]" value="cambridge_a1"><span class="float_span"><?php _e( 'Preparation Cambridge - level A1', 'webfactor' ); ?></span><br>
+            <input type="checkbox" name="lesson_choice[]" value="cambridge_a2"><span class="float_span"><?php _e( 'Preparation Cambridge - level A2', 'webfactor' ); ?></span><br>
+            <input type="checkbox" name="lesson_choice[]" value="french"><span class="float_span"><?php _e( 'French', 'webfactor' ); ?></span><br>
+            <input type="checkbox" name="lesson_choice[]" value="english"><span class="float_span"><?php _e( 'English', 'webfactor' ); ?></span>
             <br>
             <br>
             <br>
@@ -147,13 +154,13 @@
             <h2><?php _e( 'Dates of the stay', 'webfactor' ); ?></h2>
             <p><?php _e( 'From 1 to 5 weeks between July 1<sup>st</sup> and August 4<sup>th</sup> 2018. Arrivals on Sundays and departures on Saturdays.', 'webfactor' ); ?></p>
 
-            <input type="checkbox" name="dates_stay" value="week1"><span class="float_span">01.07.2018 - 07.07.2018</span><br>
-            <input type="checkbox" name="dates_stay" value="week2"><span class="float_span">08.07.2018 - 14.07.2018</span><br>
-            <input type="checkbox" name="dates_stay" value="week3"><span class="float_span">15.07.2018 - 21.07.2018</span><br>
-            <input type="checkbox" name="dates_stay" value="week4"><span class="float_span">22.07.2018 - 28.07.2018</span><br>
-            <input type="checkbox" name="dates_stay" value="week5"><span class="float_span">29.07.2018 - 04.08.2018</span><br>
-            <input type="checkbox" name="dates_stay" value="delf"><span class="float_span">08.07.2018 - 04.08.2018 <?php _e( '(DELF preparation)', 'webfactor' ); ?></span><br>
-            <input type="checkbox" name="dates_stay" value="cambrdidge"><span class="float_span">08.07.2018 - 04.08.2018 <?php _e( '(Cambridge preparation)', 'webfactor' ); ?></span>
+            <input type="checkbox" name="dates_stay[]" value="week1"><span class="float_span">01.07.2018 - 07.07.2018</span><br>
+            <input type="checkbox" name="dates_stay[]" value="week2"><span class="float_span">08.07.2018 - 14.07.2018</span><br>
+            <input type="checkbox" name="dates_stay[]" value="week3"><span class="float_span">15.07.2018 - 21.07.2018</span><br>
+            <input type="checkbox" name="dates_stay[]" value="week4"><span class="float_span">22.07.2018 - 28.07.2018</span><br>
+            <input type="checkbox" name="dates_stay[]" value="week5"><span class="float_span">29.07.2018 - 04.08.2018</span><br>
+            <input type="checkbox" name="dates_stay[]" value="delf"><span class="float_span">08.07.2018 - 04.08.2018 <?php _e( '(DELF preparation)', 'webfactor' ); ?></span><br>
+            <input type="checkbox" name="dates_stay[]" value="cambridge"><span class="float_span">08.07.2018 - 04.08.2018 <?php _e( '(Cambridge preparation)', 'webfactor' ); ?></span>
 
         </div>
 
@@ -251,18 +258,18 @@
 
                 <h2><?php _e( 'Remark', 'webfactor' ); ?></h2>
                 <p><?php _e( 'How did you hear about the summer camp?', 'webfactor' ); ?></p>
-                <input type="checkbox" name="hear_about_summer_camp" value="website"> <span class="float_span"><?php _e( "Ecole Nouvelle's website", 'webfactor' ); ?></span>
+                <input type="checkbox" name="hear_about_summer_camp[]" value="website"> <span class="float_span"><?php _e( "Ecole Nouvelle's website", 'webfactor' ); ?></span>
                 <div class="row">
-                    <div class="col-sm-6"><input type="checkbox" name="hear_about_summer_camp" value="friends"> <span class="float_span"><?php _e( 'Friends', 'webfactor' ); ?></span></div>
+                    <div class="col-sm-6"><input type="checkbox" name="hear_about_summer_camp[]" value="friends"> <span class="float_span"><?php _e( 'Friends', 'webfactor' ); ?></span></div>
                     <div class="col-sm-6"><input style="margin-top:-20px; height: 30px;" type="text" name="friends_recommendation"></div>
                 </div>
-                <input type="checkbox" name="hear_about_summer_camp" value="brochure"> <span class="float_span"><?php _e( 'Summer Camp brochure', 'webfactor' ); ?></span>
+                <input type="checkbox" name="hear_about_summer_camp[]" value="brochure"> <span class="float_span"><?php _e( 'Summer Camp brochure', 'webfactor' ); ?></span>
                 <div class="row">
-                    <div class="col-sm-6"><input type="checkbox" name="hear_about_summer_camp" value="agency"> <span class="float_span"><?php _e( 'Agency', 'webfactor' ); ?></span></div>
+                    <div class="col-sm-6"><input type="checkbox" name="hear_about_summer_camp[]" value="agency"> <span class="float_span"><?php _e( 'Agency', 'webfactor' ); ?></span></div>
                     <div class="col-sm-6"><input style="margin-top:-20px; height: 30px;" type="text" name="agency_recommendation"></div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-6"><input type="checkbox" name="hear_about_summer_camp" value="other"> <span class="float_span"><?php _e( 'Other', 'webfactor' ); ?></span></div>
+                    <div class="col-sm-6"><input type="checkbox" name="hear_about_summer_camp[]" value="other"> <span class="float_span"><?php _e( 'Other', 'webfactor' ); ?></span></div>
                     <div class="col-sm-6"><input style="margin-top:-20px; height: 30px;" type="text" name="other_recommendation"></div>
                 </div>
 
@@ -276,7 +283,7 @@
                 </div>
                 <input type="hidden" name="action" value="application_form">
                 <input type="hidden" name="current_language" value="<?php echo ICL_LANGUAGE_CODE ; ?>">
-                <input type="submit" value="<?php _e( 'Submit', 'webfactor' ); ?>">
+                <input id="application_submit_button" type="submit" value="<?php _e( 'Submit', 'webfactor' ); ?>">
 
             </div>
         </div>

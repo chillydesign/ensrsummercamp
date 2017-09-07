@@ -114,3 +114,24 @@ span[role="alert"], .wpcf7-response-output {
 }
 
 div.wpcf7-validation-errors {color: red;}
+
+
+
+.success {
+    padding:20px;
+    border: 1px solid #6bdd25;
+    border-radius: 5px;
+    margin: 0 0 30px;
+    background-color: transparentize(#6bdd25, 0.5);
+    color:#6bdd25;
+
+}
+.problem {
+    padding:20px;
+    border: 1px solid #dd4b24;
+    border-radius: 5px;
+    margin: 0 0 30px;
+    background-color: transparentize(#dd4b24, 0.5);
+    color:#dd4b24;
+
+}
