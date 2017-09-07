@@ -121,7 +121,7 @@ import lazyload from '../node_modules/jquery-lazyload/jquery.lazyload.js';
 
             load : function(elements_left, settings) {
                 if (msnry) {
-                     msnry.layout();
+                    msnry.layout();
                 }
 
             }
@@ -131,20 +131,78 @@ import lazyload from '../node_modules/jquery-lazyload/jquery.lazyload.js';
 
 
         // APPLICATION FORM VALIDATION
+        var $application_form = $('#application_form');
         var $application_submit_button = $('#application_submit_button');
-        $application_submit_button.attr('disabled','disabled');
+        $application_submit_button.attr('disabled','disabled').addClass('button_disabled');
 
-        var $necessary_fields = ['first_name', 'last_name' ];
 
-        for (var i = 0; i < $necessary_fields.length; i++) {
-            var $field_name = $necessary_fields[i];
+        var $necessary_field_names = ['first_name', 'last_name' , 'nationality', 'terms' , 'sex', 'hear_about_summer_camp[]'];
+        var $amount_empty = 0;
+
+
+        $('input, textarea', $application_form).on('change keyup', function(){
+
+            var $this = $(this);
+            $amount_empty = 0;
+
+            for (var i = 0; i < $necessary_field_names.length; i++) {
+                var $field_name = $necessary_field_names[i];
+                var $field = $("input[name='" + $field_name +  "']" );
+
+                if ($field.attr('type') == 'text') {
+                    if($field.val().trim() == '') {
+                        $amount_empty++;
+                    };
+                } else if ($field.attr('type') == 'checkbox' )  {
+                    if($field.is(':checked') == false) {
+                            $amount_empty++;
+                    };
+                } else if ($field.attr('type') == 'radio' )  {
+                    // if at least one radio button is selected
+                    if (!$("input[name='" + $field_name +  "']:checked").val()) {
+                        $amount_empty++;
+                    }
+
+
+                }
+
+
+
+            };
+
+
+            if ($amount_empty < 1 ) {
+                $application_submit_button.removeAttr('disabled').removeClass('button_disabled');
+            } else {
+                $application_submit_button.attr('disabled','disabled').addClass('button_disabled');
+            }
+
+
+        })
+
+
+        // var $necessary_fields = [];
+        for (var i = 0; i < $necessary_field_names.length; i++) {
+            var $field_name = $necessary_field_names[i];
             var $field = $("input[name='" + $field_name +  "']" );
-            console.log($field.first());
+
+            var $allowed_to_submit = true;
+
+            $field.on('change keyup', function() {
+
+                $allowed_to_submit = true;
+
+                if ($field.val().trim() == '' ) {
+                    $allowed_to_submit = false;
+                }
+
+
+
+
+            });
+
 
         }
-
-
-
 
 
     });
