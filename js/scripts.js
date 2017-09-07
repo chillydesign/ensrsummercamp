@@ -183,7 +183,7 @@ import lazyload from '../node_modules/jquery-lazyload/jquery.lazyload.js';
 
         });
 
-        $application_submit_button.on('click', function(){
+        $application_submit_button.on('mousedown', function(){
             if ( $application_submit_button.hasClass('button_disabled') ) {
                 $form_submit_warning.show();
             } else {
