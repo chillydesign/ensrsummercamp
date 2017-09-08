@@ -107,13 +107,11 @@ function send_application_emails($data, $language){
 
 
 
-    global $sitepress;
-    $sitepress->switch_lang($language, true);
+        $paragraph_for_user =  chilly_translate_string('<p>Congratulations!</p><p>You are now registered to our Summer camp in Champéry!
+An enrolment confirmation will be sent to you within a week.</p><p>Should you have any questions, please do not hesitate to contact us on our email address info@ensr.ch</p><p>We thank you for your trust!</p><p>The ENSR team</p><br /><br /><p><strong>Registration summary :</strong></p>', $language);
 
-    $paragraph_for_user = __('<p>Congratulations!</p><p>You are now registered to our Summer camp in Champéry!
- An enrolment confirmation will be sent to you within a week.</p><p>Should you have any questions, please do not hesitate to contact us on our email address info@ensr.ch</p><p>We thank you for your trust!</p><p>The ENSR team</p><br /><br /><p><strong>Registration summary :</strong></p>', 'webfactor');
 
-    $email_subject_for_user = __('Your application to ENSR Summer Camp', 'webfactor');
+    $email_subject_for_user = chilly_translate_string('Your application to ENSR Summer Camp', $language);
     $data_for_user = $data;
     // remove insurance and photo file for user email
     $data_for_user['insurance_attestation'] = '';
@@ -128,6 +126,15 @@ function send_application_emails($data, $language){
     remove_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
 
 
+
+}
+
+function chilly_translate_string($string, $language) {
+
+        global $sitepress;
+        $sitepress->switch_lang($language, true);
+
+        return __($string, 'webfactor');
 
 }
 

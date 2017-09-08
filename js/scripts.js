@@ -133,6 +133,7 @@ import lazyload from '../node_modules/jquery-lazyload/jquery.lazyload.js';
         // APPLICATION FORM VALIDATION
         var $application_form = $('#application_form');
         var $application_submit_button = $('#application_submit_button');
+        var $application_submit_button_outer = $('#application_submit_button_outer');
         var $form_submit_warning = $('#form_submit_warning').hide();
         $application_submit_button.attr('disabled','disabled').addClass('button_disabled');
 
@@ -141,81 +142,79 @@ import lazyload from '../node_modules/jquery-lazyload/jquery.lazyload.js';
         var $amount_empty = 0;
 
 
+        if ($application_form.length > 0) {
+
+            console.log('is a form');
 
 
-        $('input, textarea', $application_form).on('change keyup', function(){
+            $('input, textarea', $application_form).on('change keyup', function(){
 
-            var $this = $(this);
-            $amount_empty = 0;
+                var $this = $(this);
+                $amount_empty = 0;
+
+                for (var i = 0; i < $necessary_field_names.length; i++) {
+                    var $field_name = $necessary_field_names[i];
+                    var $field = $("input[name='" + $field_name +  "']" );
+
+                    if ($field.attr('type') == 'text') {
+                        if($field.val().trim() == '') {
+                            $amount_empty++;
+                        };
+                    } else if ($field.attr('type') == 'checkbox' )  {
+                        if($field.is(':checked') == false) {
+                                $amount_empty++;
+                        };
+                    } else if ($field.attr('type') == 'radio' )  {
+                        // if at least one radio button is selected
+                        if (!$("input[name='" + $field_name +  "']:checked").val()) {
+                            $amount_empty++;
+                        }
+
+
+                    }
+
+
+                };
+
+
+                if ($amount_empty < 1 ) {
+                    $application_submit_button.removeAttr('disabled').removeClass('button_disabled');
+                    $form_submit_warning.hide();
+                } else {
+                    $application_submit_button.attr('disabled','disabled').addClass('button_disabled');
+                }
+
+
+            });
+
+            $application_submit_button_outer.on('mouseover', function(){
+                console.log('clic');
+                if ( $application_submit_button.hasClass('button_disabled') ) {
+                    $form_submit_warning.show();
+                } else {
+
+                }
+            })
+
 
             for (var i = 0; i < $necessary_field_names.length; i++) {
                 var $field_name = $necessary_field_names[i];
                 var $field = $("input[name='" + $field_name +  "']" );
 
-                if ($field.attr('type') == 'text') {
-                    if($field.val().trim() == '') {
-                        $amount_empty++;
-                    };
-                } else if ($field.attr('type') == 'checkbox' )  {
-                    if($field.is(':checked') == false) {
-                            $amount_empty++;
-                    };
-                } else if ($field.attr('type') == 'radio' )  {
-                    // if at least one radio button is selected
-                    if (!$("input[name='" + $field_name +  "']:checked").val()) {
-                        $amount_empty++;
+                var $allowed_to_submit = true;
+
+                $field.on('change keyup', function() {
+
+                    $allowed_to_submit = true;
+
+                    if ($field.val().trim() == '' ) {
+                        $allowed_to_submit = false;
                     }
-
-
-                }
-
-
-            };
-
-
-            if ($amount_empty < 1 ) {
-                $application_submit_button.removeAttr('disabled').removeClass('button_disabled');
-                $form_submit_warning.hide();
-            } else {
-                $application_submit_button.attr('disabled','disabled').addClass('button_disabled');
+                });
             }
-
-
-        });
-
-        $application_submit_button.on('mousedown', function(){
-            if ( $application_submit_button.hasClass('button_disabled') ) {
-                $form_submit_warning.show();
-            } else {
-
-            }
-        })
-
-
-
-
-        // var $necessary_fields = [];
-        for (var i = 0; i < $necessary_field_names.length; i++) {
-            var $field_name = $necessary_field_names[i];
-            var $field = $("input[name='" + $field_name +  "']" );
-
-            var $allowed_to_submit = true;
-
-            $field.on('change keyup', function() {
-
-                $allowed_to_submit = true;
-
-                if ($field.val().trim() == '' ) {
-                    $allowed_to_submit = false;
-                }
-
-
-
-
-            });
-
 
         }
+
 
 
     });

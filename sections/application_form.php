@@ -283,7 +283,10 @@
                 </div>
                 <input type="hidden" name="action" value="application_form">
                 <input type="hidden" name="current_language" value="<?php echo ICL_LANGUAGE_CODE ; ?>">
+                <div id="application_submit_button_outer">
                 <input id="application_submit_button" type="submit" value="<?php _e( 'Submit', 'webfactor' ); ?>">
+                </div>
+
                 <p id="form_submit_warning"><?php _e( 'Please fill in all fields with a * before submitting the form', 'webfactor' ); ?></p>
 
             </div>
