@@ -76,6 +76,7 @@ textarea {
     width: 100%;
     margin-top: 20px;
     height: 180px;
+    font-size: 1em;
 }
 
 span.wpcf7-form-control-wrap {
@@ -140,6 +141,6 @@ div.wpcf7-validation-errors {color: red;}
 
 }
 
-input:focus {
+input:focus, textarea:focus {
     outline: 0;
 }
