@@ -72,7 +72,7 @@ section {
 
 .button, a.button, a > h6, h6  > a, input[type="submit"] {
     background: url('../img/button_blob.svg') no-repeat center center transparent  ;
-    background-size: cover;
+    background-size: 100% 100%;
     color:white;
     padding:20px 40px;
     margin:10px 0;
