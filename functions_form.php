@@ -253,9 +253,9 @@ function convert_post_to_data($application_id, $post, $photo_file, $insurance_fi
 
         } else if ( $key == 'hit_we') {
             if ($value == 'enrol') {
-                $post[$key] = __('We enroll', 'webfactor');
+                $post[$key] = __('Enrolled', 'webfactor');
             } else if ($value == 'dont_enrol') {
-                $post[$key] = __('We do not enroll', 'webfactor');
+                $post[$key] = __('Not enrolled', 'webfactor');
             }
 
 
@@ -345,8 +345,8 @@ function all_application_fields(){
         'fax' => 'Fax',
         'photo' => 'Photo',
         'lesson_choice' => 'Choice of lessons',
-        'level_spoken' => 'Spoken',
-        'level_written' => 'Written',
+        'level_spoken' => 'Spoken level',
+        'level_written' => 'Written level',
         'dates_stay' => 'Dates of the stay',
         'transportation' => 'Transportation',
         'hit_we' => 'Hit of the week-end',

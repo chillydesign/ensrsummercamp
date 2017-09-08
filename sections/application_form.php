@@ -289,5 +289,9 @@
             </div>
         </div>
 
+        <!-- <?php _e( 'Spoken level', 'webfactor' ); ?>-->
+        <!-- <?php _e( 'Written level', 'webfactor' ); ?>-->
+
+
     </form>
 </div>
