@@ -103,7 +103,7 @@ function send_application_emails($data, $language){
     $email_subject_for_admin = 'Nouvelle inscription au Camp d’été ENSR';
     $app_summary_for_admin = generate_application_summary( 'fr', $data);
     $email_content_for_admin = $emailheader  . $paragraph_for_admin .  $app_summary_for_admin . $emailfooter;
-    wp_mail( 'harvey.charles@gmail.com' , $email_subject_for_admin, $email_content_for_admin, $headers );
+    wp_mail( 'info@ensr.ch' , $email_subject_for_admin, $email_content_for_admin, $headers );
 
 
 
