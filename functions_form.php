@@ -338,7 +338,7 @@ function all_application_fields(){
         'birth_date' => 'Birth Date',
         'sex' => 'Sex',
         'nationality' => 'Nationality',
-        'passport_number' => 'Passport No.',
+        'passport_number' => 'Passport No. / Identity Card number (Swiss citizens only)',
         'valid_until' => 'Valid until',
         'mother_tongue' => 'Mother tongue',
         'school_name_address' => 'Name and address of your child\'s school',
