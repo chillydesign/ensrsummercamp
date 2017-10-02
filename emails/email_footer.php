@@ -11,7 +11,7 @@
                 <tr style="background:#005d9a">
                     <td style="padding: 10px;width: 33%; text-align: center; color:white;">
                        <!--  <webversion style="color:#666666; text-decoration:underline; font-weight: bold;">View as a Web Page</webversion> -->
-                        <a style="color:white; text-decoration: none;" href="https://webfactor.ch/projets/ensrsummercamp/">ENSR Summercamp </a> | Powered by <a style="color:white; text-decoration: none;" href="https://webfactor.ch"><strong>Web</strong>Factor</a>
+                        <a style="color:white; text-decoration: none;" href="http://ensr-summer.ch/">ENSR Summercamp </a> 
                     </td>
                 </tr>
             </table>
