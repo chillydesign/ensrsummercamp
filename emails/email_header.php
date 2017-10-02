@@ -131,7 +131,7 @@
                 <tr>
 					<td bgcolor="#ffffff" align="center">
 
-                        <a href="https://webfactor.ch/projets/ensrsummercamp/" target="_blank"><img src="https://webfactor.ch/projets/ensrsummercamp/wp-content/themes/ensrsummercamp/img/header-email-summercamp.jpg" width="100%" height=""  border="0" align="left" style="width: 100%; max-width:600px; margin-bottom: 15px;">
+                        <a href="http://ensr-summer.ch/" target="_blank"><img src="http://ensr-summer.ch/wp-content/themes/ensrsummercamp/img/header-email-summercamp.jpg" width="100%" height=""  border="0" align="left" style="width: 100%; max-width:600px; margin-bottom: 15px;">
 						</a>
 					</td>
                 </tr>
