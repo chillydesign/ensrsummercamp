@@ -76,25 +76,83 @@ import lazyload from '../node_modules/jquery-lazyload/jquery.lazyload.js';
                 width : '100%',
                 //height: 560
             })
-
+            var iconBase ="https://webfactor.ch/projets/ensrsummercamp/wp-content/themes/ensrsummercamp/img/";
             var location_map = new google.maps.Map(location_map_container.get(0), map_options);
+            var icons = {
+              ensr: {
+                icon:{
+                  url: iconBase + 'ensr_marker2.png',// url
+                  scaledSize: new google.maps.Size(50, 64), // scaled size
+                  origin: new google.maps.Point(0,0), // origin
+                  anchor: new google.maps.Point(25,64) // anchor
+                }
+              },
+              summercamp: {
+                icon:{
+                url: iconBase + 'summercamp_marker2.png',// url
+                scaledSize: new google.maps.Size(50, 64), // scaled size
+                origin: new google.maps.Point(0,0), // origin
+                anchor: new google.maps.Point(25,64) // anchor
+              }
+              }
+            };
+
+            var features = [
+             {
+               position: new google.maps.LatLng(46.5268387,6.6548382),
+               type: 'ensr',
+               title:'<strong>ENSR</strong><br>Chemin de Rovéréaz 20<br>1012 Lausanne<br>Suisse'
+             }, {
+               position: new google.maps.LatLng(46.1778861,6.8695741),
+               type: 'summercamp',
+               title:'<strong>ENSR Summercamp</strong><br>Hôtel Suisse, Rue du Village 55<br>1874 Champéry<br>Suisse'
+             }
+           ];
+
+            var bounds = new google.maps.LatLngBounds();
+            var infowindow = new google.maps.InfoWindow({content: ''});
+           features.forEach(function(feature) {
+               var marker = new google.maps.Marker({
+                 position: feature.position,
+                 icon: icons[feature.type].icon,
+                 map: location_map,
+                 optimized: false 
+               });
+
+               marker.addListener('click', function(){
+                 infowindow.setContent(feature.title);
+                 infowindow.open(location_map, this);
+               })
+
+              bounds.extend(marker.position);
+             });
+
+              location_map.fitBounds(bounds);
 
 
-            var latitude = map_location.lat;
-            var longitude = map_location.lng;
-            var latlng = new google.maps.LatLng(  latitude , longitude);
-            var marker = new google.maps.Marker({
-                map: location_map,
-                position: latlng,
-                title: map_title
-            });
+            // var latitude = map_location.lat;
+            // var longitude = map_location.lng;
+            // var latlng = new google.maps.LatLng(  latitude , longitude);
+            // var marker = new google.maps.Marker({
+            //     map: location_map,
+            //     position: latlng,
+            //     title: map_title
+            // });
 
-            location_map.setCenter( latlng );
+            // location_map.setCenter( latlng );
 
 
 
         };
         // END OF MAP
+
+
+        // MAP WITH 2 CUSTOM MARKERS
+
+        if (typeof map_location != 'undefined') {
+
+          };
+        // END OF MAP WITH 2 CUSTOM MARKERS
 
 
 

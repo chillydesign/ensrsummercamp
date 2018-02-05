@@ -38,8 +38,8 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-6"><label for="passport_number"><?php _e( 'Passport No.', 'webfactor' ); ?>*</label> </div>
-                <div class="col-sm-6"><input type="text" name="passport_number"></div>
+                <div class="col-sm-6"><label for="passport_number"><?php _e( 'Passport No. / Identity Card number (Swiss citizens only)', 'webfactor' ); ?>*</label> </div>
+                <div class="col-sm-6"><input type="text" name="passport_number"style="margin-top:15px"></div>
             </div>
 
             <div class="row">
