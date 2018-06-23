@@ -107,6 +107,7 @@
 
 
             <h2><?php _e( 'Choice of lessons', 'webfactor' ); ?>*</h2>
+            <input type="checkbox" name="lesson_choice[]" value="multisports"><span class="float_span"><?php _e( 'Multisports', 'webfactor' ); ?></span><br>
             <input type="checkbox" name="lesson_choice[]" value="delf_a1"><span class="float_span"><?php _e( 'Preparation DELF - level A1', 'webfactor' ); ?></span><br>
             <input type="checkbox" name="lesson_choice[]" value="delf_a2"><span class="float_span"><?php _e( 'Preparation DELF - level A2', 'webfactor' ); ?></span><br>
             <input type="checkbox" name="lesson_choice[]" value="cambridge_a1"><span class="float_span"><?php _e( 'Preparation Cambridge - level A1', 'webfactor' ); ?></span><br>

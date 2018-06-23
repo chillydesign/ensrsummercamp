@@ -258,6 +258,8 @@ function convert_post_to_data($application_id, $post, $photo_file, $insurance_fi
                     $translated_value = __('French', 'webfactor');
                 } else if ($array_value == 'english') {
                     $translated_value = __('English', 'webfactor');
+                } else if ($array_value == 'multisports') {
+                    $translated_value = __('Multisports', 'webfactor');
                 } else {
                     $translated_value = $array_value;
                 }
