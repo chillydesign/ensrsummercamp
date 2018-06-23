@@ -15,6 +15,14 @@
 	Theme Support
 \*------------------------------------*/
 
+// COMPOSER PACKAGAES
+require('vendor/google/recaptcha/src/autoload.php');
+
+// ENVIRONMENTAL VARIABLES
+include('env.php');
+
+
+
 if (!isset($content_width))
 {
     $content_width = 900;

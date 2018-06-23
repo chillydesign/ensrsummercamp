@@ -57,6 +57,9 @@
 
 
 		<?php wp_footer(); ?>
+        <?php if ( is_page('admission-fees')  ||  is_page('inscription-cout') || is_page('contact') ): ?>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <?php endif; ?>
 
 		<script type="text/javascript" src="<?php echo $tdu; ?>/js/min/scripts.bundle.js?v=<?php echo wf_version(); ?>"></script>
 		<script>

@@ -13,76 +13,94 @@ function process_application_form() {
     $referer = $_SERVER['HTTP_REFERER'];
     $referer =  explode('?',   $referer)[0];
 
-    // IF DATA HAS BEEN POSTED
-    if ( isset($_POST['action'])  && $_POST['action'] == 'application_form'   ) :
+
+    ////////////
+    // RECAPTCHA
+    $recaptcha = new \ReCaptcha\ReCaptcha( RECAPTCHA_SECRET );
+    $gRecaptchaResponse = $_POST['g-recaptcha-response'];
+    $remoteIp = $_SERVER['REMOTE_ADDR'];
+    $resp = $recaptcha->verify($gRecaptchaResponse, $remoteIp);
+    if ($resp->isSuccess()) { // IS verified!
 
 
-        $language = ( isset($_POST['current_language']) && $_POST['current_language'] !== '' ) ?  $_POST['current_language'] : 'fr';
 
-        $fullname = $_POST['first_name'] . ' ' . $_POST['last_name'];
-
-
-
-        $post = array(
-            'post_title'     => $fullname,
-            'post_status'    => 'publish',
-            'post_type'      => 'application',
-            'post_content'   => ''
-        );
-        $new_application = wp_insert_post( $post );
-
-        if ($new_application == 0) {
-            //    $redirect = get_home_url(); // . '/redirect-to-this-page';
-            wp_redirect( $referer . '?problem' );
-        } else {
+        // IF DATA HAS BEEN POSTED
+        if ( isset($_POST['action'])  && $_POST['action'] == 'application_form'   ) :
 
 
-            $fields = all_application_fields();
 
-            foreach ($fields as $field => $translation ) {
-                if (isset($_POST[$field])){
-                    add_post_meta($new_application, $field,  $_POST[$field] , true);
+
+
+            $language = ( isset($_POST['current_language']) && $_POST['current_language'] !== '' ) ?  $_POST['current_language'] : 'fr';
+
+            $fullname = $_POST['first_name'] . ' ' . $_POST['last_name'];
+
+            $post = array(
+                'post_title'     => $fullname,
+                'post_status'    => 'publish',
+                'post_type'      => 'application',
+                'post_content'   => ''
+            );
+            $new_application = wp_insert_post( $post );
+
+            if ($new_application == 0) {
+                //    $redirect = get_home_url(); // . '/redirect-to-this-page';
+                wp_redirect( $referer . '?problem' );
+            } else {
+
+
+                $fields = all_application_fields();
+
+                foreach ($fields as $field => $translation ) {
+                    if (isset($_POST[$field])){
+                        add_post_meta($new_application, $field,  $_POST[$field] , true);
+                    }
                 }
+
+
+
+                //if filesize of upload is greater than 0 bytes, ie it exists
+                // add or replace the file already there
+                $photo_file = $_FILES['photo'];
+                if ($photo_file['size'] > 0 ) {
+                    $picture_id = application_add_file_upload( $photo_file, $new_application );
+                    $thumbnail = set_post_thumbnail( $new_application, $picture_id );
+                }
+
+
+
+                $insurance_file = $_FILES['insurance_attestation'];
+                if ($insurance_file['size'] > 0 ) {
+                    $file_id = application_add_file_upload( $insurance_file, $new_application );
+                    update_field( 'insurance_attestation', $file_id,  $new_application  );
+                }
+
+
+                // get raw post data, and convert properties and values to nice string
+                $data = convert_post_to_data($new_application, $_POST, $photo_file, $insurance_file,    $language);
+
+
+                // SEND EMAILS TO THE ADMIN AND THE PERSON WHO SUBMITTED
+                send_application_emails( $data, $language);
+
+
+                //  $redirect = get_home_url(); // . '/redirect-to-this-page/';
+                wp_redirect( $referer . '?success' );
             }
 
 
-
-            //if filesize of upload is greater than 0 bytes, ie it exists
-            // add or replace the file already there
-            $photo_file = $_FILES['photo'];
-            if ($photo_file['size'] > 0 ) {
-                $picture_id = application_add_file_upload( $photo_file, $new_application );
-                $thumbnail = set_post_thumbnail( $new_application, $picture_id );
-            }
+            exit;
 
 
 
-            $insurance_file = $_FILES['insurance_attestation'];
-            if ($insurance_file['size'] > 0 ) {
-                $file_id = application_add_file_upload( $insurance_file, $new_application );
-                update_field( 'insurance_attestation', $file_id,  $new_application  );
-            }
+        endif;
 
 
-            // get raw post data, and convert properties and values to nice string
-            $data = convert_post_to_data($new_application, $_POST, $photo_file, $insurance_file,    $language);
+    } else { // recaptcha has errors. dont allow to add application
+        $errors = $resp->getErrorCodes();
+        wp_redirect( $referer . '?problem&recaptcha' );
+    } // END OF NOT VERIFIED BY RECAPTCHA
 
-
-            // SEND EMAILS TO THE ADMIN AND THE PERSON WHO SUBMITTED
-            send_application_emails( $data, $language);
-
-
-
-            //  $redirect = get_home_url(); // . '/redirect-to-this-page/';
-            wp_redirect( $referer . '?success' );
-        }
-
-
-        exit;
-
-
-
-    endif;
 
 
 }
