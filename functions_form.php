@@ -259,7 +259,7 @@ function convert_post_to_data($application_id, $post, $photo_file, $insurance_fi
                 } else if ($array_value == 'english') {
                     $translated_value = __('English', 'webfactor');
                 } else if ($array_value == 'multisports') {
-                    $translated_value = __('Multisports', 'webfactor');
+                    $translated_value = __('Multisports (available from 28/6 to 18/07)', 'webfactor');
                 } else {
                     $translated_value = $array_value;
                 }
