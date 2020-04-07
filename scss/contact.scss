@@ -112,6 +112,7 @@ span[role="alert"], .wpcf7-response-output {
     font-size: 12px;
     margin-top: 15px;
     border: none!important;
+    font-size: 1.5em;
 }
 
 div.wpcf7-validation-errors {color: red;}
@@ -143,4 +144,7 @@ div.wpcf7-validation-errors {color: red;}
 
 input:focus, textarea:focus {
     outline: 0;
+}
+input, textarea {
+    font-size: 17px!important;
 }
