@@ -285,7 +285,8 @@
                 <input type="hidden" name="action" value="application_form">
                 <input type="hidden" name="current_language" value="<?php echo ICL_LANGUAGE_CODE ; ?>">
                 <div>
-                    <div class="g-recaptcha" data-sitekey="6LfyYWAUAAAAAIQ7eL1VMOntNDWS0ljUNLDPPlrP"></div>
+                    <!-- <div class="g-recaptcha" data-sitekey="6LfyYWAUAAAAAIQ7eL1VMOntNDWS0ljUNLDPPlrP"></div>  V2 -->
+                     <div class="g-recaptcha" data-sitekey="6LfjhM8UAAAAANp1C2x9Cf_uYkTNMg__fSWDyA8a"></div> <!--V3 -->
                 </div>
                 <div id="application_submit_button_outer">
                 <input id="application_submit_button" type="submit" value="<?php _e( 'Submit', 'webfactor' ); ?>">
