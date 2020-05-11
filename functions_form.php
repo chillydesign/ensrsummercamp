@@ -98,7 +98,8 @@ function process_application_form() {
 
     } else { // recaptcha has errors. dont allow to add application
         $errors = $resp->getErrorCodes();
-        wp_redirect( $referer . '?problem&recaptcha' );
+        var_dump($errors);
+        // wp_redirect( $referer . '?problem&recaptcha' );
     } // END OF NOT VERIFIED BY RECAPTCHA
 
 
